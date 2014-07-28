@@ -1,0 +1,116 @@
+﻿<#@ Template Language="C#" HostSpecific="True"  #><#@ Output Extension="cshtml" #><#@ include file="..\Imports.include.t4" #><# var viewDataType = (EnvDTE.CodeType) ViewDataType; #><# var fullModelName = Namespace+"."+ViewDataTypeName; #>
+@model <#= fullModelName #>
+@using <#= ResourceNamespace #>
+
+@{
+	ViewBag.Title = string.Format(Resources.<#= ViewDataTypeName #>_Index_Title_Format, "<#= PluralizedSpacedModelName #>");
+}
+
+<h2>@ViewBag.Title.</h2>
+
+<div class="row">
+    <div class="col-md-12">
+        <section id="indexForm">
+			<table id="table" class="table table-striped table-bordered responsive" data-ajax="/api/<#= ViewDataTypeName #>">
+                <thead>
+                    <tr>
+<#
+				foreach (var property in ScaffoldProperties) { 
+#>
+                        <th>
+							@Html.LabelFor(m => m.<#= property.Key #>, new { @class = "control-label" })
+						</th>
+<#
+				}
+#>
+                        <th>&nbsp;</th>
+                    </tr>
+                </thead>
+            </table>
+		</section>
+	</div>
+</div>
+
+@section scripts{
+	@Scripts.Render("~/bundles/jqueryval")
+	@Scripts.Render("~/bundles/kendo")
+
+    <script src="http://cdn.datatables.net/1.10.1/js/jquery.dataTables.min.js"></script>
+    <script src="http://cdn.datatables.net/plug-ins/725b2a2115b/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+    <script src="http://cdn.datatables.net/responsive/1.0.0/js/dataTables.responsive.js"></script>
+	
+<#
+	var standardTypes = new List<string>() { typeof(System.String).FullName, typeof(System.Boolean).FullName, typeof(System.Int32).FullName };
+	var dateTimePickerTypes = new List<string>() { typeof(System.DateTime).FullName };
+#>
+<# 
+	foreach (var property in ScaffoldProperties) {
+		if (RelatedProperties.ContainsKey(property.Key)) {
+#>
+	<script src="/Scripts/Data/<#= RelatedPropertyTypes[property.Key] #>.js"></script>
+<# 
+        }
+    }
+#>
+	<script src="/Scripts/Data/<#= ViewDataTypeName #>.js"></script>
+
+	<script type="text/javascript">
+
+		fnServerObjectToArray = function (aElements) {
+            return function (sSource, aoData, fnCallback) {
+
+                $.ajax({
+                    "dataType": 'json',
+                    "type": "GET",
+                    "url": sSource,
+                    "data": aoData,
+                    "success": function (json) {
+
+                        var a = [];
+                        for (var i = 0, iLen = json.length ; i < iLen ; i++) {
+                            var inner = [];
+                            for (var j = 0, jLen = aElements.length ; j < jLen ; j++) {
+                                if (aElements[j] != "PublicId") {
+                                    inner.push(json[i][aElements[j]]);
+                                } else {
+                                    inner.push('\
+<div class="nav navbar-nav btn-group">\
+    <button type="button" class="btn btn-info" onClick="window.location.href=\'/<#= ViewDataTypeName #>/Details/' + json[i][aElements[j]] + '\'">@Resources.<#= ViewDataTypeName #>_Index_View</button>\
+    <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">\
+        <span class="caret"></span>\
+        <span class="sr-only">Toggle Dropdown</span>\
+    </button>\
+    <ul class="dropdown-menu" role="menu">\
+        <li><a href="/<#= ViewDataTypeName #>/Edit/' + json[i][aElements[j]] + '">@Resources.<#= ViewDataTypeName #>_Index_Edit</a></li>\
+        <li><a href="/<#= ViewDataTypeName #>/Delete/' + json[i][aElements[j]] + '">@Resources.<#= ViewDataTypeName #>_Index_Delete</a></li>\
+    </ul>\
+</div>');
+                                
+                                }
+                            }
+                            a.push(inner);
+                        }
+                        json.aaData = a;
+                        fnCallback(json);
+
+                    }
+                });
+
+            }
+        }
+
+		$(document).ready( function() {
+
+			$("#table").dataTable({
+		        "sAjaxSource": "/api/<#= ViewDataTypeName #>",
+		        "fnServerData": fnServerObjectToArray([<#
+				foreach (var property in ScaffoldProperties) { if (!RelatedProperties.ContainsKey(property.Key)) {
+#>"<#= property.Key #>", <#
+				} }
+#>"PublicId"])
+		    });
+
+		});
+
+	</script>
+}

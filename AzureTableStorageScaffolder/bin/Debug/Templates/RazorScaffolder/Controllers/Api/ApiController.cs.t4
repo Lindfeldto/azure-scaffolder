@@ -1,0 +1,67 @@
+﻿<#@ Template Language="C#" HostSpecific="True"  #><#@ Output Extension="cs" #><#@ include file="..\..\Imports.include.t4" #><# var viewDataType = (EnvDTE.CodeType) ViewDataType; #><# var fullModelName = Namespace+"."+ViewDataTypeName; #>
+using System.Web.Http;
+using <#= Namespace #>;
+using <#= DefaultNamespace #>.Models;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
+namespace <#= DefaultNamespace #>.Controllers.Api
+{
+	public class <#= ViewDataTypeName #>Controller: ApiController
+	{
+		protected <#= DbContextTypeName.Replace(DbContextNamespace + ".", "") #> db = new <#= DbContextTypeName.Replace(DbContextNamespace + ".", "") #>();
+
+		[HttpGet]
+		public async Task<IEnumerable<<#= ViewDataTypeName #>>> Get()
+		{
+			return db.Get<#= PluralizedName #>();
+		}
+
+		[HttpGet]
+		public async Task<<#= ViewDataTypeName #>> Get(string id)
+		{
+			var privateEntity = BlueMarble.Shared.Azure.Storage.Table.Entity.GetPrivateEntity(new <#= ViewDataTypeName #>(id));
+
+			return db.Get<#= ViewDataTypeName #>(privateEntity.PartitionKey, privateEntity.RowKey).GetPublicEntity<<#= ViewDataTypeName #>>();
+		}
+
+		[HttpPost]
+		public async Task<string> Post(<#= ViewDataTypeName #> entity)
+		{
+			if (ModelState.IsValid)
+			{
+				await db.Insert<#= ViewDataTypeName #>Async(entity);
+
+				entity.PublicId = entity.GetPublicId();
+				return entity.GetPublicEntity<<#= ViewDataTypeName #>>().PublicId;
+			}
+
+            return string.Empty;
+		}
+
+		[HttpPut]
+		public async Task Put(string id, <#= ViewDataTypeName #> entity)
+		{
+			if (ModelState.IsValid)
+			{
+				await db.Update<#= ViewDataTypeName #>Async(entity.GetPrivateEntity<<#= ViewDataTypeName #>>());
+			}
+		}
+
+		[HttpDelete]
+		public async Task Delete(string id)
+		{
+			var privateEntity = BlueMarble.Shared.Azure.Storage.Table.Entity.GetPrivateEntity(new <#= ViewDataTypeName #>() { PublicId = id });
+
+			var entity = await db.Get<#= ViewDataTypeName #>Async(privateEntity.PartitionKey, privateEntity.RowKey);
+
+			await db.Delete<#= ViewDataTypeName #>Async(entity);
+		}
+
+		protected override void Dispose(bool disposing)
+        {
+            db.Dispose(disposing);
+            base.Dispose(disposing);
+        }
+	}
+}

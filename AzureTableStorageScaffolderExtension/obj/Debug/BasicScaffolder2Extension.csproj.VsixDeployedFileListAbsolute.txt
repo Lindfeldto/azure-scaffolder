@@ -1,0 +1,47 @@
+C:\Users\Stephan\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\Author Name\AzureTableStorageScaffolder\1.0\\AzureTableStorageScaffolder.dll
+C:\Users\Stephan\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\Author Name\AzureTableStorageScaffolder\1.0\\extension.vsixmanifest
+C:\Users\Stephan\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\Author Name\AzureTableStorageScaffolder\1.0\\BlueMarble.Shared.Azure.dll
+C:\Users\Stephan\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\Author Name\AzureTableStorageScaffolder\1.0\\Microsoft.AspNet.Scaffolding.12.0.dll
+C:\Users\Stephan\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\Author Name\AzureTableStorageScaffolder\1.0\\Microsoft.Data.Edm.dll
+C:\Users\Stephan\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\Author Name\AzureTableStorageScaffolder\1.0\\Microsoft.Data.OData.dll
+C:\Users\Stephan\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\Author Name\AzureTableStorageScaffolder\1.0\\Microsoft.Data.Services.Client.dll
+C:\Users\Stephan\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\Author Name\AzureTableStorageScaffolder\1.0\\Microsoft.WindowsAzure.Configuration.dll
+C:\Users\Stephan\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\Author Name\AzureTableStorageScaffolder\1.0\\Microsoft.WindowsAzure.Storage.dll
+C:\Users\Stephan\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\Author Name\AzureTableStorageScaffolder\1.0\\Newtonsoft.Json.dll
+C:\Users\Stephan\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\Author Name\AzureTableStorageScaffolder\1.0\\System.Spatial.dll
+C:\Users\Stephan\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\Author Name\AzureTableStorageScaffolder\1.0\\AzureTableStorageScaffolder.pdb
+C:\Users\Stephan\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\Blue Marble Software (Pty) Ltd\AzureTableStorageScaffolder\1.0\\AzureTableStorageScaffolder.dll
+C:\Users\Stephan\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\Blue Marble Software (Pty) Ltd\AzureTableStorageScaffolder\1.0\\extension.vsixmanifest
+C:\Users\Stephan\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\Blue Marble Software (Pty) Ltd\AzureTableStorageScaffolder\1.0\\BlueMarble.Shared.Azure.dll
+C:\Users\Stephan\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\Blue Marble Software (Pty) Ltd\AzureTableStorageScaffolder\1.0\\Microsoft.AspNet.Scaffolding.12.0.dll
+C:\Users\Stephan\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\Blue Marble Software (Pty) Ltd\AzureTableStorageScaffolder\1.0\\Microsoft.Data.Edm.dll
+C:\Users\Stephan\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\Blue Marble Software (Pty) Ltd\AzureTableStorageScaffolder\1.0\\Microsoft.Data.OData.dll
+C:\Users\Stephan\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\Blue Marble Software (Pty) Ltd\AzureTableStorageScaffolder\1.0\\Microsoft.Data.Services.Client.dll
+C:\Users\Stephan\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\Blue Marble Software (Pty) Ltd\AzureTableStorageScaffolder\1.0\\Microsoft.WindowsAzure.Configuration.dll
+C:\Users\Stephan\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\Blue Marble Software (Pty) Ltd\AzureTableStorageScaffolder\1.0\\Microsoft.WindowsAzure.Storage.dll
+C:\Users\Stephan\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\Blue Marble Software (Pty) Ltd\AzureTableStorageScaffolder\1.0\\Newtonsoft.Json.dll
+C:\Users\Stephan\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\Blue Marble Software (Pty) Ltd\AzureTableStorageScaffolder\1.0\\System.Spatial.dll
+C:\Users\Stephan\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\Blue Marble Software (Pty) Ltd\AzureTableStorageScaffolder\1.0\\AzureTableStorageScaffolder.pdb
+C:\Users\Stephan\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\Blue Marble Software (Pty) Ltd\Azure Table Storage Scaffolder\1.0\\AzureTableStorageScaffolder.dll
+C:\Users\Stephan\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\Blue Marble Software (Pty) Ltd\Azure Table Storage Scaffolder\1.0\\extension.vsixmanifest
+C:\Users\Stephan\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\Blue Marble Software (Pty) Ltd\Azure Table Storage Scaffolder\1.0\\BlueMarble.Shared.Azure.dll
+C:\Users\Stephan\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\Blue Marble Software (Pty) Ltd\Azure Table Storage Scaffolder\1.0\\Microsoft.AspNet.Scaffolding.12.0.dll
+C:\Users\Stephan\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\Blue Marble Software (Pty) Ltd\Azure Table Storage Scaffolder\1.0\\Microsoft.Data.Edm.dll
+C:\Users\Stephan\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\Blue Marble Software (Pty) Ltd\Azure Table Storage Scaffolder\1.0\\Microsoft.Data.OData.dll
+C:\Users\Stephan\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\Blue Marble Software (Pty) Ltd\Azure Table Storage Scaffolder\1.0\\Microsoft.Data.Services.Client.dll
+C:\Users\Stephan\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\Blue Marble Software (Pty) Ltd\Azure Table Storage Scaffolder\1.0\\Microsoft.WindowsAzure.Configuration.dll
+C:\Users\Stephan\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\Blue Marble Software (Pty) Ltd\Azure Table Storage Scaffolder\1.0\\Microsoft.WindowsAzure.Storage.dll
+C:\Users\Stephan\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\Blue Marble Software (Pty) Ltd\Azure Table Storage Scaffolder\1.0\\Newtonsoft.Json.dll
+C:\Users\Stephan\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\Blue Marble Software (Pty) Ltd\Azure Table Storage Scaffolder\1.0\\System.Spatial.dll
+C:\Users\Stephan\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\Blue Marble Software (Pty) Ltd\Azure Table Storage Scaffolder\1.0\\AzureTableStorageScaffolder.pdb
+C:\Users\Stephan\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\Blue Marble Software (Pty) Ltd\Azure Table Storage Scaffolder\1.0\\Microsoft.Practices.EnterpriseLibrary.SemanticLogging.dll
+C:\Users\Stephan\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\Blue Marble Software (Pty) Ltd\Azure Table Storage Scaffolder\1.0\\Templates\RazorScaffolder\Models\StorageContext.cs.t4
+C:\Users\Stephan\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\Blue Marble Software (Pty) Ltd\Azure Table Storage Scaffolder\1.0\\Templates\RazorScaffolder\Controllers\ApiController.cs.t4
+C:\Users\Stephan\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\Blue Marble Software (Pty) Ltd\Azure Table Storage Scaffolder\1.0\\Templates\RazorScaffolder\Controllers\Controller.cs.t4
+C:\Users\Stephan\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\Blue Marble Software (Pty) Ltd\Azure Table Storage Scaffolder\1.0\\Templates\RazorScaffolder\Imports.include.t4
+C:\Users\Stephan\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\Blue Marble Software (Pty) Ltd\Azure Table Storage Scaffolder\1.0\\Templates\RazorScaffolder\Views\Detail.cs.t4
+C:\Users\Stephan\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\Blue Marble Software (Pty) Ltd\Azure Table Storage Scaffolder\1.0\\Templates\RazorScaffolder\Views\Delete.cs.t4
+C:\Users\Stephan\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\Blue Marble Software (Pty) Ltd\Azure Table Storage Scaffolder\1.0\\Templates\RazorScaffolder\Views\Update.cs.t4
+C:\Users\Stephan\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\Blue Marble Software (Pty) Ltd\Azure Table Storage Scaffolder\1.0\\Templates\RazorScaffolder\Views\Create.cs.t4
+C:\Users\Stephan\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\Blue Marble Software (Pty) Ltd\Azure Table Storage Scaffolder\1.0\\Templates\RazorScaffolder\Views\Index.cs.t4
+C:\Users\Stephan\AppData\Local\Microsoft\VisualStudio\12.0Exp\Extensions\Blue Marble Software (Pty) Ltd\Azure Table Storage Scaffolder\1.0\\Templates\RazorScaffolder\ModelMetadataFunctions.cs.include.t4

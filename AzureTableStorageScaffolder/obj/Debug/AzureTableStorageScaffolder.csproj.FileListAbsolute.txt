@@ -1,0 +1,172 @@
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\Templates\RazorScaffolder\Models\StorageContext.cs.t4
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\Templates\RazorScaffolder\Controllers\Api\ApiController.cs.t4
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\Templates\RazorScaffolder\Controllers\Controller.cs.t4
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\Templates\RazorScaffolder\Imports.include.t4
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\Templates\RazorScaffolder\Views\Detail.cs.t4
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\Templates\RazorScaffolder\Views\Delete.cs.t4
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\Templates\RazorScaffolder\Views\Update.cs.t4
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\Templates\RazorScaffolder\Views\Create.cs.t4
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\Templates\RazorScaffolder\Views\Index.cs.t4
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\Templates\RazorScaffolder\ModelMetadataFunctions.cs.include.t4
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\AzureTableStorageScaffolder.dll.config
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\AzureTableStorageScaffolder.dll
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\AzureTableStorageScaffolder.pdb
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\BlueMarble.Shared.Azure.dll
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\BlueMarble.Shared.dll
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\Microsoft.AspNet.Scaffolding.12.0.dll
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\Microsoft.Data.Edm.dll
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\Microsoft.Data.OData.dll
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\Microsoft.Data.Services.Client.dll
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\Microsoft.Practices.EnterpriseLibrary.SemanticLogging.dll
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\Microsoft.WindowsAzure.Configuration.dll
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\Microsoft.WindowsAzure.Storage.dll
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\System.Spatial.dll
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\Microsoft.AspNet.Scaffolding.12.0.xml
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\Microsoft.Data.Edm.xml
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\Microsoft.Data.OData.xml
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\Microsoft.Data.Services.Client.xml
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\Microsoft.Practices.EnterpriseLibrary.SemanticLogging.xml
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\Microsoft.WindowsAzure.Storage.xml
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\System.Spatial.xml
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\de\Microsoft.Data.Edm.resources.dll
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\es\Microsoft.Data.Edm.resources.dll
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\fr\Microsoft.Data.Edm.resources.dll
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\it\Microsoft.Data.Edm.resources.dll
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\ja\Microsoft.Data.Edm.resources.dll
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\ko\Microsoft.Data.Edm.resources.dll
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\ru\Microsoft.Data.Edm.resources.dll
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\zh-Hans\Microsoft.Data.Edm.resources.dll
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\zh-Hant\Microsoft.Data.Edm.resources.dll
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\de\Microsoft.Data.OData.resources.dll
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\es\Microsoft.Data.OData.resources.dll
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\fr\Microsoft.Data.OData.resources.dll
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\it\Microsoft.Data.OData.resources.dll
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\ja\Microsoft.Data.OData.resources.dll
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\ko\Microsoft.Data.OData.resources.dll
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\ru\Microsoft.Data.OData.resources.dll
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\zh-Hans\Microsoft.Data.OData.resources.dll
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\zh-Hant\Microsoft.Data.OData.resources.dll
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\de\Microsoft.Data.Services.Client.resources.dll
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\es\Microsoft.Data.Services.Client.resources.dll
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\fr\Microsoft.Data.Services.Client.resources.dll
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\it\Microsoft.Data.Services.Client.resources.dll
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\ja\Microsoft.Data.Services.Client.resources.dll
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\ko\Microsoft.Data.Services.Client.resources.dll
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\ru\Microsoft.Data.Services.Client.resources.dll
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\zh-Hans\Microsoft.Data.Services.Client.resources.dll
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\zh-Hant\Microsoft.Data.Services.Client.resources.dll
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\de\System.Spatial.resources.dll
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\es\System.Spatial.resources.dll
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\fr\System.Spatial.resources.dll
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\it\System.Spatial.resources.dll
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\ja\System.Spatial.resources.dll
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\ko\System.Spatial.resources.dll
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\ru\System.Spatial.resources.dll
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\zh-Hans\System.Spatial.resources.dll
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\zh-Hant\System.Spatial.resources.dll
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\obj\Debug\AzureTableStorageScaffolder.csprojResolveAssemblyReference.cache
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\obj\Debug\UI\NewDataContextDialog.g.cs
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\obj\Debug\UI\WebFormsScaffolderDialog.g.cs
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\obj\Debug\AzureTableStorageScaffolder_MarkupCompile.cache
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\obj\Debug\AzureTableStorageScaffolder_MarkupCompile.lref
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\obj\Debug\UI\NewDataContextDialog.baml
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\obj\Debug\UI\WebFormsScaffolderDialog.baml
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\obj\Debug\AzureTableStorageScaffolder.g.resources
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\obj\Debug\AzureTableStorageScaffolder.Resources.resources
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\obj\Debug\AzureTableStorageScaffolder.UI.NewDataContextDialogResources.resources
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\obj\Debug\AzureTableStorageScaffolder.UI.WebFormsScaffolderDialogResources.resources
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\obj\Debug\AzureTableStorageScaffolder.csproj.GenerateResource.Cache
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\obj\Debug\AzureTableStorageScaffolder.dll
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\obj\Debug\AzureTableStorageScaffolder.pdb
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\Templates\RazorScaffolder\Scripts\DataScript.cs.t4
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\Templates\RazorScaffolder\Views\Resources.cs.t4
+C:\Users\Stephan\documents\visual studio 2013\Projects\BasicScaffolder2\BasicScaffolder2\bin\Debug\af-ZA\BlueMarble.Shared.Azure.resources.dll
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\obj\Debug\AzureTableStorageScaffolder.csprojResolveAssemblyReference.cache
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\obj\Debug\UI\NewDataContextDialog.g.cs
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\obj\Debug\UI\WebFormsScaffolderDialog.g.cs
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\obj\Debug\AzureTableStorageScaffolder_MarkupCompile.cache
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\obj\Debug\AzureTableStorageScaffolder_MarkupCompile.lref
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\obj\Debug\AzureTableStorageScaffolder.dll
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\Templates\RazorScaffolder\Models\StorageContext.cs.t4
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\Templates\RazorScaffolder\Controllers\Api\ApiController.cs.t4
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\Templates\RazorScaffolder\Controllers\Controller.cs.t4
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\Templates\RazorScaffolder\Imports.include.t4
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\Templates\RazorScaffolder\Scripts\DataScript.cs.t4
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\Templates\RazorScaffolder\Views\Delete.cs.t4
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\Templates\RazorScaffolder\Views\Resources.cs.t4
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\Templates\RazorScaffolder\Views\Create.cs.t4
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\Templates\RazorScaffolder\Views\Index.cs.t4
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\Templates\RazorScaffolder\ModelMetadataFunctions.cs.include.t4
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\AzureTableStorageScaffolder.dll.config
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\AzureTableStorageScaffolder.dll
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\AzureTableStorageScaffolder.pdb
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\BlueMarble.Shared.Azure.dll
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\BlueMarble.Shared.dll
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\Microsoft.AspNet.Scaffolding.12.0.dll
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\Microsoft.Data.Edm.dll
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\Microsoft.Data.OData.dll
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\Microsoft.Data.Services.Client.dll
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\Microsoft.Practices.EnterpriseLibrary.SemanticLogging.dll
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\Microsoft.WindowsAzure.Configuration.dll
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\Microsoft.WindowsAzure.Storage.dll
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\Newtonsoft.Json.dll
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\System.Spatial.dll
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\Microsoft.AspNet.Scaffolding.12.0.xml
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\Microsoft.Data.Edm.xml
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\Microsoft.Data.OData.xml
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\Microsoft.Data.Services.Client.xml
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\Microsoft.Practices.EnterpriseLibrary.SemanticLogging.xml
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\Microsoft.WindowsAzure.Storage.xml
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\Newtonsoft.Json.xml
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\System.Spatial.xml
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\af-ZA\BlueMarble.Shared.Azure.resources.dll
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\de\Microsoft.Data.Edm.resources.dll
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\es\Microsoft.Data.Edm.resources.dll
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\fr\Microsoft.Data.Edm.resources.dll
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\it\Microsoft.Data.Edm.resources.dll
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\ja\Microsoft.Data.Edm.resources.dll
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\ko\Microsoft.Data.Edm.resources.dll
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\ru\Microsoft.Data.Edm.resources.dll
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\zh-Hans\Microsoft.Data.Edm.resources.dll
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\zh-Hant\Microsoft.Data.Edm.resources.dll
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\de\Microsoft.Data.OData.resources.dll
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\es\Microsoft.Data.OData.resources.dll
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\fr\Microsoft.Data.OData.resources.dll
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\it\Microsoft.Data.OData.resources.dll
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\ja\Microsoft.Data.OData.resources.dll
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\ko\Microsoft.Data.OData.resources.dll
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\ru\Microsoft.Data.OData.resources.dll
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\zh-Hans\Microsoft.Data.OData.resources.dll
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\zh-Hant\Microsoft.Data.OData.resources.dll
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\de\Microsoft.Data.Services.Client.resources.dll
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\es\Microsoft.Data.Services.Client.resources.dll
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\fr\Microsoft.Data.Services.Client.resources.dll
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\it\Microsoft.Data.Services.Client.resources.dll
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\ja\Microsoft.Data.Services.Client.resources.dll
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\ko\Microsoft.Data.Services.Client.resources.dll
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\ru\Microsoft.Data.Services.Client.resources.dll
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\zh-Hans\Microsoft.Data.Services.Client.resources.dll
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\zh-Hant\Microsoft.Data.Services.Client.resources.dll
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\de\System.Spatial.resources.dll
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\es\System.Spatial.resources.dll
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\fr\System.Spatial.resources.dll
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\it\System.Spatial.resources.dll
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\ja\System.Spatial.resources.dll
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\ko\System.Spatial.resources.dll
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\ru\System.Spatial.resources.dll
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\zh-Hans\System.Spatial.resources.dll
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\zh-Hant\System.Spatial.resources.dll
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\obj\Debug\UI\NewDataContextDialog.baml
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\obj\Debug\UI\WebFormsScaffolderDialog.baml
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\obj\Debug\AzureTableStorageScaffolder.g.resources
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\obj\Debug\AzureTableStorageScaffolder.Resources.resources
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\obj\Debug\AzureTableStorageScaffolder.UI.NewDataContextDialogResources.resources
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\obj\Debug\AzureTableStorageScaffolder.UI.WebFormsScaffolderDialogResources.resources
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\obj\Debug\AzureTableStorageScaffolder.csproj.GenerateResource.Cache
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\obj\Debug\AzureTableStorageScaffolder.pdb
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\Templates\RazorScaffolder\Views\Details.cs.t4
+C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\bin\Debug\Templates\RazorScaffolder\Views\Edit.cs.t4

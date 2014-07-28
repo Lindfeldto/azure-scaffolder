@@ -1,0 +1,77 @@
+﻿<#@ Template Language="C#" HostSpecific="True"  #><#@ Output Extension="cshtml" #><#@ include file="..\Imports.include.t4" #><# var viewDataType = (EnvDTE.CodeType) ViewDataType; #><# var fullModelName = Namespace+"."+ViewDataTypeName; #>
+@model <#= fullModelName #>
+@using <#= ResourceNamespace #>
+
+@{
+	ViewBag.Title = string.Format(Resources.<#= ViewDataTypeName #>_Delete_Title_Format, "<#= SpacedModelName #>");
+}
+
+<h2>@ViewBag.Title.</h2>
+<div class="row">
+    <section id="deleteForm">
+        <form id="form">
+			<div class="col-md-8">
+				<h4>@string.Format(Resources.<#= ViewDataTypeName #>_Delete_Form_Header_Format, "<#= SpacedModelName #>")</h4>
+				<hr />
+				<div class="alert alert-warning" data-bind="visible: error" style="visibility: hidden;"><strong>Warning!</strong><span data-bind="text: errorMessage"></span></div>
+				@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+				@Html.HiddenFor(m => m.PublicId, new Dictionary<string, object>() { { "class", "form-control" }, { "data-bind", "value: PublicId" } })
+
+	<#			foreach (var property in ScaffoldProperties) { 
+	#>
+				<div class="form-group">
+					<div class="row">
+						@Html.LabelFor(m => m.<#= property.Key #>, new { @class = "col-md-3 control-label" })
+						<div class="col-md-9">
+							<span data-bind="text: <#= property.Key #>"></span>
+						</div>
+					</div>
+				</div>
+	<#
+				} 
+	#>
+			</div>
+            <div class="col-md-4">
+                <h4>@Resources.<#= ViewDataTypeName #>_Delete_Form_Options</h4>
+                <hr />
+                <div class="row form-group">
+                    <div class="col-md-12">
+                        <button data-bind="click: delete" class="btn btn-warning">@Resources.<#= ViewDataTypeName #>_Delete_Delete</button>
+                    </div>
+                </div>
+            </div>
+		</form>
+	</section>
+</div>
+
+@section scripts{
+	@Scripts.Render("~/bundles/jqueryval")
+	@Scripts.Render("~/bundles/kendo")
+	
+<#
+	var standardTypes = new List<string>() { typeof(System.String).FullName, typeof(System.Boolean).FullName, typeof(System.Int32).FullName };
+	var dateTimePickerTypes = new List<string>() { typeof(System.DateTime).FullName };
+#>
+<# 
+	foreach (var property in ScaffoldProperties) {
+		if (RelatedProperties.ContainsKey(property.Key)) {
+#>
+	<script src="/Scripts/Data/<#= RelatedPropertyTypes[property.Key] #>.js"></script>
+<# 
+        }
+    }
+#>
+	<script src="/Scripts/Data/<#= ViewDataTypeName #>.js"></script>
+
+	<script type="text/javascript">
+
+		$(document).ready( function() {
+		
+			<#= ViewDataTypeName #>Data.Init("@ViewBag.PublicId", $("form"));
+
+			<#= ViewDataTypeName #>Data.Load($("form"));
+
+		});
+
+	</script>
+}
