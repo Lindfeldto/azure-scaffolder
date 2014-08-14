@@ -1,5 +1,6 @@
 ﻿using AzureTableStorageScaffolder.UI;
 using AzureTableStorageScaffolder.Utils;
+using BlueMarble.Shared.Helpers;
 using EnvDTE;
 using Microsoft.AspNet.Scaffolding;
 using Microsoft.AspNet.Scaffolding.Core.Metadata;
@@ -73,6 +74,24 @@ namespace AzureTableStorageScaffolder.Scaffolders
             List<string> webFormsTemplates = new List<string>();
             webFormsTemplates.AddRange(new string[] { webFormsName });
 
+            Dictionary<string, ScaffoldProperty> completeScaffoldProperties = GetScaffoldProperties(modelType);
+
+            var scaffoldProperties = new Dictionary<string, string>();
+            var relatedProperties = new Dictionary<string, string>();
+            var relatedPropertyTypes = new Dictionary<string, string>();
+
+            foreach (var scaffoldProperty in completeScaffoldProperties)
+            {
+                scaffoldProperties.Add(scaffoldProperty.Key, scaffoldProperty.Value.TypeFullName);
+
+                if (scaffoldProperty.Value.RelatedPropertyType != null)
+                {
+                    relatedProperties.Add(scaffoldProperty.Key, GetPluralizedName(scaffoldProperty.Key));
+
+                    relatedPropertyTypes.Add(scaffoldProperty.Key, scaffoldProperty.Value.RelatedPropertyType.Name);
+                }
+            }
+
             // Scaffold aspx page and code behind
             foreach (string webForm in webFormsTemplates)
             {
@@ -89,6 +108,9 @@ namespace AzureTableStorageScaffolder.Scaffolders
                         {"RelativePath", relativePath},
                         {"DefaultNamespace", defaultNamespace},
                         {"Namespace", modelNameSpace},
+                        {"ScaffoldProperties", scaffoldProperties},
+                        {"RelatedProperties", relatedProperties},
+                        {"RelatedPropertyTypes", relatedPropertyTypes},
                         {"ViewDataType", modelType},
                         {"ViewDataTypeName", modelType.Name},
                         {"PluralizedName", GetPluralizedName(modelType.Name)},

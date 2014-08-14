@@ -8,6 +8,9 @@
 
 <h2>@ViewBag.Title.</h2>
 
+<p>
+    @Html.ActionLink(Resources.<#= ViewDataTypeName #>_Index_Create_New, Resources.<#= ViewDataTypeName #>_Index_Create, null, new { @class = "btn btn-success" })
+</p>
 <div class="row">
     <div class="col-md-12">
         <section id="indexForm">
@@ -15,13 +18,13 @@
                 <thead>
                     <tr>
 <#
-				foreach (var property in ScaffoldProperties) { 
+				foreach (var property in ScaffoldProperties) { if (!RelatedProperties.ContainsKey(property.Key)) {
 #>
                         <th>
 							@Html.LabelFor(m => m.<#= property.Key #>, new { @class = "control-label" })
 						</th>
 <#
-				}
+				} }
 #>
                         <th>&nbsp;</th>
                     </tr>

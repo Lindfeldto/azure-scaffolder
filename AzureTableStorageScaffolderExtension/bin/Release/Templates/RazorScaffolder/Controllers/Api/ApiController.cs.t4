@@ -53,7 +53,10 @@ namespace <#= DefaultNamespace #>.Controllers.Api
 		{
 			var privateEntity = BlueMarble.Shared.Azure.Storage.Table.Entity.GetPrivateEntity(new <#= ViewDataTypeName #>() { PublicId = id });
 
-			var entity = await db.Get<#= ViewDataTypeName #>Async(privateEntity.PartitionKey, privateEntity.RowKey);
+			var entity = db.Get<#= ViewDataTypeName #>(privateEntity.PartitionKey, privateEntity.RowKey);
+			
+            if (entity == null)
+                throw new System.Exception("<#= ViewDataTypeName #> entity not found, delete failed.");
 
 			await db.Delete<#= ViewDataTypeName #>Async(entity);
 		}

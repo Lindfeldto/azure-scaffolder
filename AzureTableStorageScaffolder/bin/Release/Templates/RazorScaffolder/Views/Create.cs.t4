@@ -14,7 +14,7 @@
                 @Html.AntiForgeryToken()
                 <h4>@string.Format(Resources.<#= ViewDataTypeName #>_Create_Form_Header_Format, "<#= SpacedModelName #>")</h4>
                 <hr />
-				<div class="alert alert-warning" data-bind="visible: error" style="visibility: hidden;"><strong>Warning!</strong><span data-bind="text: errorMessage"></span></div>
+				<div class="alert alert-warning" data-bind="visible: error" style="visibility: hidden;"><strong>Warning! </strong><span data-bind="text: errorMessage"></span></div>
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 				@Html.HiddenFor(m => m.PublicId, new Dictionary<string, object>() { { "class", "form-control" }, { "data-bind", "value: PublicId" } })
 

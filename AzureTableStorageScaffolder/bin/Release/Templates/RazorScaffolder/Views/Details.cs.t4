@@ -13,9 +13,11 @@
 			<div class="col-md-8">
 				<h4>@string.Format(Resources.<#= ViewDataTypeName #>_Details_Form_Header_Format, "<#= SpacedModelName #>")</h4>
 				<hr />
+				<div class="alert alert-info" data-bind="visible: loading"><strong>Loading </strong><span>your data</span></div>
 				@Html.HiddenFor(m => m.PublicId, new Dictionary<string, object>() { { "class", "form-control" }, { "data-bind", "value: PublicId" } })
 
 	<#			foreach (var property in ScaffoldProperties) { 
+					if (!RelatedProperties.ContainsKey(property.Key)) {
 	#>
 				<div class="form-group">
 					<div class="row">
@@ -26,6 +28,19 @@
 					</div>
 				</div>
 	<#
+                    }
+					else {
+	#>
+				<div class="form-group">
+					<div class="row">
+						@Html.LabelFor(m => m.<#= property.Key #>, new { @class = "col-md-3 control-label" })
+						<div class="col-md-9">
+							<span data-bind="text: <#= property.Key #>_Name"></span>
+						</div>
+					</div>
+				</div>
+	<#
+                    }
 				} 
 	#>
 			</div>
