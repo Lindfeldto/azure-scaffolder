@@ -4,7 +4,7 @@
 library
 C#
 .cs
-C:\Dev\Verlexson\Blue Marble\Azure Table Storage Scaffolder\Main\AzureTableStorageScaffolder\obj\Release\
+C:\Dev\GitHub\bluemarblesoftware\azure-scaffolder\AzureTableStorageScaffolder\obj\Release\
 AzureTableStorageScaffolder
 none
 false
@@ -13,7 +13,7 @@ TRACE
 2-1388537995
 
 33188187743
-38-1263092498
+3851449195
 UI\NewDataContextDialog.xaml;UI\WebFormsScaffolderDialog.xaml;
 
 False

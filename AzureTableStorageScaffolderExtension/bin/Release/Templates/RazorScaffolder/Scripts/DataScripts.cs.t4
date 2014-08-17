@@ -1,0 +1,39 @@
+﻿<#@ Template Language="C#" HostSpecific="True"  #><#@ Output Extension="js" #><#@ include file="..\Imports.include.t4" #><# var viewDataType = (EnvDTE.CodeType) ViewDataType; #><# var fullModelName = Namespace+"."+ViewDataTypeName; #>
+/* *************************************** */
+/* <#= ViewDataTypeName #> api data access */
+/* *************************************** */
+
+var <#= PluralizedName #>Data = <#= PluralizedName #>Data || (function(){
+<#
+	var standardTypes = new List<string>() { typeof(System.String).FullName, typeof(System.Boolean).FullName, typeof(System.Int32).FullName };
+	var dateTimePickerTypes = new List<string>() { typeof(System.DateTime).FullName };
+#>
+
+	return {
+		<#= PluralizedName #>DataSource: new kendo.data.DataSource({
+			transport: {
+
+				read: {
+					url: '/api/<#= ViewDataTypeName #>',
+					dataType: 'json'
+				}
+			
+			},
+			schema: {
+
+				model: {
+<#	
+foreach (var property in ScaffoldProperties) { 
+#>
+					<#= property.Key #>: '<#= property.Key #>',
+<#
+} 
+#>
+				}
+
+			}
+		})
+
+	};
+}());
+<#@ include file="..\ModelMetadataFunctions.cs.include.t4" #>

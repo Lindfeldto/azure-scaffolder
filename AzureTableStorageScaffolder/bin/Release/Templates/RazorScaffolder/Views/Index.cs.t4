@@ -18,13 +18,13 @@
                 <thead>
                     <tr>
 <#
-				foreach (var property in ScaffoldProperties) { if (!RelatedProperties.ContainsKey(property.Key)) {
+				foreach (var property in ScaffoldProperties) { 
 #>
                         <th>
 							@Html.LabelFor(m => m.<#= property.Key #>, new { @class = "control-label" })
 						</th>
 <#
-				} }
+				}
 #>
                         <th>&nbsp;</th>
                     </tr>
