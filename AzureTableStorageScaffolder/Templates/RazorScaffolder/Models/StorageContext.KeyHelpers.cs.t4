@@ -1,0 +1,39 @@
+﻿<#@ Template Language="C#" HostSpecific="True"  #><#@ Output Extension="cs" #><#@ include file="..\Imports.include.t4" #><# var viewDataType = (EnvDTE.CodeType) ViewDataType; #><# var fullModelName = Namespace+"."+ViewDataTypeName; #>
+using <#= Namespace #>;
+using <#= DefaultNamespace #>.Models;
+using Microsoft.WindowsAzure.Storage.Table;
+using BlueMarble.Shared.Azure.Storage.Table;
+using System.Linq;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+using System;
+
+namespace <#= DefaultNamespace #>.Models
+{
+	public partial class <#= DbContextTypeName.Replace(DbContextNamespace + ".", "") #>
+	{
+		#region Key Helpers
+		
+        public string Get<#= ViewDataTypeName #>PartitionKey(<#= ViewDataTypeName #> <#= ViewDataTypeName #>)
+        {
+            return GetPartitionKey(Constants.StorageTableNames.<#= PluralizedName #>);
+        }
+
+        public string Get<#= ViewDataTypeName #>PartitionKey()
+        {
+            return GetPartitionKey(Constants.StorageTableNames.<#= PluralizedName #>);
+        }
+
+        public string Get<#= ViewDataTypeName #>RowKey(<#= ViewDataTypeName #> <#= ViewDataTypeName #>)
+        {
+            return GetRowKey();
+        }
+
+        public string Get<#= ViewDataTypeName #>RowKey()
+        {
+            return GetRowKey();
+        }
+
+		#endregion
+	}
+}

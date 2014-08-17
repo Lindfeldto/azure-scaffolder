@@ -152,6 +152,10 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
+    <None Include="Templates\RazorScaffolder\Models\StorageContext.KeyHelpers.cs.t4">
+      <LastGenOutput>index.cshtml.cs.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Templates\RazorScaffolder\Models\StorageContext.cs.t4">
       <LastGenOutput>index.cshtml.cs.cs</LastGenOutput>
       <Parameters>&lt;%3fxml version="1.0" encoding="utf-16"%3f&gt;
@@ -167,6 +171,10 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Templates\RazorScaffolder\Imports.include.t4">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Templates\RazorScaffolder\Scripts\DataScripts.cs.t4">
+      <LastGenOutput>index.cshtml.cs.cs</LastGenOutput>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="Templates\RazorScaffolder\Scripts\DataScript.cs.t4">

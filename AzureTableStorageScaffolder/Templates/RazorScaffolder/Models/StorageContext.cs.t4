@@ -31,23 +31,6 @@ namespace <#= DefaultNamespace #>.Models
 
 		#endregion
 
-		#region Partition Keys
-
-		public string Get<#= ViewDataTypeName #>PartitionKey(<#= ViewDataTypeName #> <#= ViewDataTypeName #>)
-		{
-			return string.Format("{0}_{1}", 
-				Constants.StorageTableNames.<#= PluralizedName #>, 
-				<#= ViewDataTypeName #>.PartitionKey);
-		}
-
-		public string Get<#= ViewDataTypeName #>RowKey(<#= ViewDataTypeName #> <#= ViewDataTypeName #>)
-		{
-			return string.Format("{0}", 
-				<#= ViewDataTypeName #>.RowKey);
-		}
-
-		#endregion
-
 		#region Initialize Table
 
 		[InitializeTable]

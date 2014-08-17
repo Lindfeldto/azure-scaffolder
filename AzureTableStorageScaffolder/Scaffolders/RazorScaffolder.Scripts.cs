@@ -32,7 +32,7 @@ namespace AzureTableStorageScaffolder.Scaffolders
                 throw new ArgumentNullException("modelType");
             }
 
-            var webForms = new[] { "DataScript" };
+            var webForms = new[] { "DataScript", "DataScripts" };
 
             // Now add each view
             foreach (string webForm in webForms)
@@ -102,7 +102,17 @@ namespace AzureTableStorageScaffolder.Scaffolders
             {
                 Project project = Context.ActiveProject;
                 var templatePath = Path.Combine(webForm);
-                string outputPath = Path.Combine(outputFolderPath, modelType.Name);
+                string outputPath = string.Empty;
+                
+                switch (webForm)
+                {
+                    case "DataScript":
+                        outputPath = Path.Combine(outputFolderPath, modelType.Name);
+                        break;
+                    case "DataScripts":
+                        outputPath = Path.Combine(outputFolderPath, GetPluralizedName(modelType.Name));
+                        break;
+                }
 
                 var defaultNamespace = GetDefaultNamespace();
                 AddFileFromTemplate(project,

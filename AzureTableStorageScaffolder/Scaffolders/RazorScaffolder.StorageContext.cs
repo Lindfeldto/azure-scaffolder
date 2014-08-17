@@ -31,7 +31,7 @@ namespace AzureTableStorageScaffolder.Scaffolders
                 throw new ArgumentNullException("modelType");
             }
 
-            var webForms = new[] { "StorageContext" };
+            var webForms = new[] { "StorageContext", "StorageContext.KeyHelpers" };
 
             // Now add each view
             foreach (string webForm in webForms)
@@ -64,8 +64,6 @@ namespace AzureTableStorageScaffolder.Scaffolders
                 throw new ArgumentException(Resources.WebFormsViewScaffolder_EmptyActionName, "webFormsName");
             }
 
-            // Add folder for views. This is necessary to display an error when the folder already exists but
-            // the folder is excluded in Visual Studio: see https://github.com/Superexpert/WebFormsScaffolding/issues/18
             string outputFolderPath = Path.Combine("Models");
             AddFolder(Context.ActiveProject, outputFolderPath);
 

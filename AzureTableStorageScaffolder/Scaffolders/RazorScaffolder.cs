@@ -103,7 +103,7 @@ namespace AzureTableStorageScaffolder.Scaffolders
                 List<NuGetPackage> t = new List<NuGetPackage>();
                 
                 t.Add(new NuGetPackage("BlueMarble.Shared.Azure",
-                                       "1.0.42",
+                                       "1.0.43",
                                        new NuGetSourceRepository()));
 
                 return (IEnumerable<NuGetPackage>)t;

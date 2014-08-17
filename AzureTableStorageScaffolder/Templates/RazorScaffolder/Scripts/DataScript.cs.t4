@@ -11,289 +11,261 @@ var <#= ViewDataTypeName #>Data = <#= ViewDataTypeName #>Data || (function(){
 #>
 
 	return {
-		<#= PluralizedName #>DataSource: new kendo.data.DataSource({
-			transport: {
-				read: {
-					url: "/api/<#= ViewDataTypeName #>",
-					dataType: "json"
-				}
-			},
-			schema: {
-				model: {
-<#	
-foreach (var property in ScaffoldProperties) { 
-#>
-					<#= property.Key #>: "<#= property.Key #>",
-<#
-} 
-#>
-				}
-			}
-		}),
-		<#= ViewDataTypeName #>DataSource: null,
-		ViewModel: null,
 		PublicId: 'NOTSET',
-		Init: function(publicId, form) {
-		    PublicId = publicId;
+		Delete: function(e) {
 
-			<#= ViewDataTypeName #>DataSource = new kendo.data.DataSource({
-				transport: {
-					create: {
-						url: "/api/<#= ViewDataTypeName #>",
-						dataType: "json"
-					},
-					read: {
-						url: "/api/<#= ViewDataTypeName #>/" + publicId,
-						dataType: "json"
-					},
-					update: {
-						url: "/api/<#= ViewDataTypeName #>/" + publicId,
-						dataType: "json"
-					},
-					destroy: {
-						url: "/api/<#= ViewDataTypeName #>/" + publicId,
-						dataType: "json"
-					}
-				},
-				schema: {
-					model: {
-	<#	
+			var that = this;
+
+			e.preventDefault();
+
+            $.ajax({
+                url: '/api/<#= ViewDataTypeName #>/' + that.PublicId,
+                type: 'DELETE',
+                dataType: 'json',
+                success: function(data) {
+
+                    window.location.href = '/<#= ViewDataTypeName #>/';
+
+                },
+                error: function(error) {
+
+                    that.LogError(error);
+
+                }
+            });
+
+		},
+		Update: function(e) {
+
+			var that = this;
+
+		    e.preventDefault();
+
+			$.ajax({
+				url: '/api/<#= ViewDataTypeName #>/' + that.PublicId,
+				type: 'PUT',
+				dataType: 'json',
+				data: {
+<#	
 	foreach (var property in ScaffoldProperties) { 
-	#>
-						<#= property.Key #>: "<#= property.Key #>",
-	<#
+		if ((property.Value == typeof(System.DateTime).FullName))
+		{
+#>
+					<#= property.Key #>: kendo.toString(this.<#= property.Key #>, 'F'),
+<#				}
+		else {
+#>
+					<#= property.Key #>: that.<#= property.Key #>,
+<#
+        }	
 	} 
-	#>
-					}
+#>
+					PublicId: this.PublicId
+				},
+				success: function(data) {
+
+					window.location.href = '/<#= ViewDataTypeName #>/Edit/' + that.PublicId;
+
+				},
+				error: function(error) {
+
+					that.LogError(error);
+
 				}
 			});
 
-			ViewModel = kendo.observable({
-				PublicId: publicId,
+		},
+		Create: function(e) {
+
+			var that = this;
+
+			e.preventDefault();
+
+			$.ajax({
+				url: '/api/<#= ViewDataTypeName #>',
+				type: 'POST',
+				dataType: 'json',
+				data: {
+<#	
+	foreach (var property in ScaffoldProperties) { 
+		if ((property.Value == typeof(System.DateTime).FullName))
+		{
+#>
+					<#= property.Key #>: kendo.toString(that.<#= property.Key #>, 'F'),
+<#				}
+		else {
+#>
+					<#= property.Key #>: that.<#= property.Key #>,
+<#
+        }	
+	} 
+#>
+					PublicId: that.PublicId
+				},
+				success: function(data) {
+
+					window.location.href = '/<#= ViewDataTypeName #>/Details/' + data;
+
+				},
+				error: function(error) {
+
+					that.LogError(error);
+
+				}
+			});
+
+		},
+		Load: function (form) {
+
+			var that = this;
+
+			that.ViewModel.loading = true;
+			that.ViewModel.loaded = false;
+
+			$.ajax({
+				url: '/api/<#= ViewDataTypeName #>/' + that.PublicId,
+				type: 'GET',
+				dataType: 'json',
+				success: function (data) {
+
+					that.LoadEntity(data, form);
+
+				},
+				error: function (error) {
+
+					that.LogError(error);
+
+				}
+			});
+
+			that.Bind(form);
+
+		},
+		LoadEntity: function(data, form){
+
+			var that = this;
+<#	
+	foreach (var property in ScaffoldProperties) { 
+#>
+			that.ViewModel.<#= property.Key #> = data.<#= property.Key #>;
+<#
+	} 
+#>
+			that.ViewModel.PublicId = data.PublicId;
+
+<#	
+foreach (var property in ScaffoldProperties) { 
+#>
+<#
+if (RelatedProperties.ContainsKey(property.Key)) {
+#>
+			$.ajax({
+				url: '/api/<#= RelatedPropertyTypes[property.Key] #>/' + that.ViewModel.<#= property.Key #>,
+				type: 'GET',
+				dataType: 'json',
+				success: function (data) {
+
+					that.ViewModel.<#= property.Key #>_Display = data.Name;
+
+				},
+				error: function (error) {
+
+					that.ViewModel.<#= property.Key #>_Display = 'error reading data';
+
+					console.log(error);
+					    
+				}
+			}).done(function (data) {
+
+		        that.Bind(form);
+
+		    });
+<#
+}
+} 
+#>
+
+			that.ViewModel.loading = false;
+			that.ViewModel.loaded = true;
+
+			that.Bind(form);
+
+		},
+		ViewModel: kendo.observable({
+			PublicId: '',
+<# 
+foreach (var property in ScaffoldProperties) {
+	if (RelatedProperties.ContainsKey(property.Key)) {
+#>
+			<#= RelatedDataSources[property.Key] #>DataSource: null,
+<# 
+    }
+}
+#>		
+<#	
+foreach (var property in ScaffoldProperties) { 
+#>
+			<#= property.Key #>: '',
+<#
+if (RelatedProperties.ContainsKey(property.Key)) {
+#>
+			<#= property.Key #>_Display: 'loading...',
+<#
+}
+} 
+#>
+			hasChanges: false,
+			saving: false,
+			saved: false,
+			loading: true,
+			loaded: false,
+			error: false,
+			errorMessage: ''
+				
+		}),
+		Bind: function(form) {
+
+		    kendo.bind(form, this.ViewModel);
+
+		},
+		LogError: function(error) {
+
+			var that = this;
+			
+			that.ViewModel.error = true;
+			that.ViewModel.errorMessage = error.responseJSON.ExceptionMessage;
+
+			console.log(error);
+
+		},
+		Init: function(publicId) {
+			
+			var that = this;
+
+		    that.PublicId = publicId;
+
+			that.ViewModel.PublicId = publicId;
+
 <# 
 	foreach (var property in ScaffoldProperties) {
 		if (RelatedProperties.ContainsKey(property.Key)) {
 #>
-				<#= RelatedDataSources[property.Key] #>DataSource: <#= RelatedPropertyTypes[property.Key] #>Data.<#= RelatedDataSources[property.Key] #>DataSource,
+			that.ViewModel.<#= RelatedDataSources[property.Key] #>DataSource = <#= RelatedDataSources[property.Key] #>Data.<#= RelatedDataSources[property.Key] #>DataSource;
 <# 
         }
     }
-#>		
-				<#= ViewDataTypeName #>DataSource: <#= ViewDataTypeName #>DataSource,
-<#	
-foreach (var property in ScaffoldProperties) { 
+	foreach (var property in ScaffoldProperties) { 
 #>
-				<#= property.Key #>: "",
+			that.ViewModel.<#= property.Key #> = '';
 <#
-	if (RelatedProperties.ContainsKey(property.Key)) {
+		if (RelatedProperties.ContainsKey(property.Key)) {
 #>
-				<#= property.Key #>_Name: "",
+			that.ViewModel.<#= property.Key #>_Display = 'loading...';
 <#
-    }
-} 
+		}
+	} 
 #>
-				hasChanges: false,
-				saving: false,
-				saved: false,
-				loading: true,
-				loaded: false,
-				error: false,
-				errorMessage: '',
-				delete: function(e) {
-					e.preventDefault();
-
-					var that = this;
-
-					$.ajax({
-						url: '/api/<#= ViewDataTypeName #>/' + publicId,
-						type: 'DELETE',
-						dataType: 'json',
-						success: function(data) {
-
-							window.location.href = '/<#= ViewDataTypeName #>/';
-
-						},
-						error: function(error) {
-
-							that.set("error", true);
-							that.set("errorMessage", error.responseJSON.ExceptionMessage);
-
-							console.log(error);
-
-						}
-					});
-				},
-				save: function(e) {
-					e.preventDefault();
-
-					this.<#= ViewDataTypeName #>DataSource.sync();
-
-				},
-				update: function(e) {
-					e.preventDefault();
-
-					var that = this;
-
-					$.ajax({
-						url: '/api/<#= ViewDataTypeName #>/' + publicId,
-						type: 'PUT',
-						dataType: 'json',
-						data: {
-<#	
-			foreach (var property in ScaffoldProperties) { 
-				if ((property.Value == typeof(System.DateTime).FullName))
-				{
-#>
-							<#= property.Key #>: kendo.toString(this.<#= property.Key #>, "F"),
-<#				}
-				else {
-#>
-							<#= property.Key #>: this.<#= property.Key #>,
-<#
-                }	
-			} 
-#>
-							PublicId: this.PublicId
-						},
-						success: function(data) {
-
-							window.location.href = '/<#= ViewDataTypeName #>/Edit/' + publicId;
-
-						},
-						error: function(error) {
-
-							that.set("error", true);
-							that.set("errorMessage", error.responseJSON.ExceptionMessage);
-
-							console.log(error);
-
-						}
-					});
-				},
-				create: function(e) {
-					e.preventDefault();
-
-					var that = this;
-
-					$.ajax({
-						url: '/api/<#= ViewDataTypeName #>',
-						type: 'POST',
-						dataType: 'json',
-						data: {
-<#	
-			foreach (var property in ScaffoldProperties) { 
-				if ((property.Value == typeof(System.DateTime).FullName))
-				{
-#>
-							<#= property.Key #>: kendo.toString(this.<#= property.Key #>, "F"),
-<#				}
-				else {
-#>
-							<#= property.Key #>: this.<#= property.Key #>,
-<#
-                }	
-			} 
-#>
-							PublicId: this.PublicId
-						},
-						success: function(data) {
-
-							window.location.href = '/<#= ViewDataTypeName #>/Details/' + data;
-
-						},
-						error: function(error) {
-
-							that.set("error", true);
-							that.set("errorMessage", error.responseJSON.ExceptionMessage);
-
-							console.log(error);
-
-						}
-					});
-
-				},
-				load: function (form) {
-
-					this.loading = true;
-					this.loaded = false;
-
-					kendo.bind(form, this);
-
-					var that = this;
-
-					$.ajax({
-						url: '/api/<#= ViewDataTypeName #>/' + publicId,
-						type: 'GET',
-						dataType: 'json',
-						success: function (data) {
-
-							that.loadEntity(data, form);
-
-						},
-						error: function (error) {
-
-							that.set("error", true);
-							that.set("errorMessage", error.responseJSON.ExceptionMessage);
-
-							console.log(error);
-
-						}
-					});
-
-				},
-				loadEntity: function(data, form){
-
-<#	
-			foreach (var property in ScaffoldProperties) { 
-#>
-					this.<#= property.Key #> = data.<#= property.Key #>;
-<#
-			} 
-		#>
-					this.PublicId = data.PublicId;
-
-					var that = this;
-
-<#	
-foreach (var property in ScaffoldProperties) { 
-#>
-<#
-	if (RelatedProperties.ContainsKey(property.Key)) {
-#>
-					$.ajax({
-					    url: '/api/<#= RelatedPropertyTypes[property.Key] #>/' + this.<#= property.Key #>,
-					    type: 'GET',
-					    dataType: 'json',
-					    success: function (data) {
-
-					        that.<#= property.Key #>_Name = data.Name;
-					        kendo.bind(form, that);
-
-					    },
-					    error: function (error) {
-
-							console.log(error);
-					    
-						}
-					});
-<#
-    }
-} 
-#>
-
-					this.loading = false;
-					this.loaded = true;
-
-					kendo.bind(form, this);
-				}
-			});
-
-            kendo.bind(form, ViewModel);
-		},
-		Load: function(form) {
-
-			ViewModel.load(form);
-
+				
 		}
 	};
 }());

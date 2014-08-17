@@ -4,6 +4,7 @@ using <#= Namespace #>;
 using <#= DefaultNamespace #>.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace <#= DefaultNamespace #>.Controllers.Api
 {
@@ -11,10 +12,58 @@ namespace <#= DefaultNamespace #>.Controllers.Api
 	{
 		protected <#= DbContextTypeName.Replace(DbContextNamespace + ".", "") #> db = new <#= DbContextTypeName.Replace(DbContextNamespace + ".", "") #>();
 
+<#
+	var standardTypes = new List<string>() { typeof(System.String).FullName, typeof(System.Boolean).FullName, typeof(System.Int32).FullName };
+	var dateTimePickerTypes = new List<string>() { typeof(System.DateTime).FullName };
+#>
 		[HttpGet]
-		public async Task<IEnumerable<<#= ViewDataTypeName #>>> Get()
+		public async Task<IEnumerable<<#= ViewDataTypeName #>>> Get(<# 
+	foreach (var property in ScaffoldProperties) {
+		if (RelatedProperties.ContainsKey(property.Key)) {
+#><#= RelatedPropertyTypes[property.Key] #> <#= property.Key #>, <# 
+        }
+    }
+#>bool? sorted)
 		{
-			return db.Get<#= PluralizedName #>();
+			var resulting<#= PluralizedName #> = new List<<#= ViewDataTypeName #>>();
+
+			var _<#= ViewDataType #> = db.Get<#= PluralizedName #>(string.Format("{0}_{1}", 
+				DealerWorld.Vehicle.Distribution.Services.Models.StorageContext.Constants.StorageTableNames.<#= PluralizedName #>, 
+				<#= ViewDataType #>));
+			
+<# 
+	foreach (var property in ScaffoldProperties) {
+		if (RelatedProperties.ContainsKey(property.Key)) {
+#>
+
+            var unique<#= RelatedDataSources[property.Key] #> = _<#= RelatedDataSources[property.Key] #>
+                .Select(m => m.Code)
+                .Distinct()
+                .ToList();
+
+            var _unique_<#= RelatedDataSources[property.Key] #> = new List<<#= property.Key #>>();
+
+            foreach (var unique<#= property.Key #> in unique<#= RelatedDataSources[property.Key] #>)
+            {
+                var private<#= property.Key #>Entity = BlueMarble.Shared.Azure.Storage.Table.Entity.GetPrivateEntity(new <#= property.Key #>(unique<#= property.Key #>));
+
+                var <#= property.Key #> = db.Get<#= property.Key #>(private<#= property.Key #>Entity.PartitionKey, private<#= property.Key #>Entity.RowKey);
+                _unique_<#= RelatedDataSources[property.Key] #>.Add(<#= property.Key #>.GetPublicEntity<<#= property.Key #>>());
+            }
+
+            foreach (var _<#= property.Key #> in _<#= RelatedDataSources[property.Key] #>)
+            {
+                _<#= property.Key #>.AccessoryCode = _<#= RelatedDataSources[property.Key] #>.Where(m => m.PublicId == _<#= property.Key #>.Code).FirstOrDefault().Name;
+
+                resulting<#= RelatedDataSources[property.Key] #>.Add(_<#= property.Key #>.GetPublicEntity<<#= property.Key #>>());
+            }
+
+<# 
+        }
+    }
+#>
+			
+			return resulting<#= PluralizedName #>;
 		}
 
 		[HttpGet]

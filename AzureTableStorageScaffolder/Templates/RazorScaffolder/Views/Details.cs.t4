@@ -8,7 +8,7 @@
 
 <h2>@ViewBag.Title.</h2>
 <div class="row">
-    <section id="detailForm">
+    <section>
         <form id="form">
 			<div class="col-md-8">
 				<h4>@string.Format(Resources.<#= ViewDataTypeName #>_Details_Form_Header_Format, "<#= SpacedModelName #>")</h4>
@@ -16,10 +16,18 @@
 				<div class="alert alert-info" data-bind="visible: loading"><strong>Loading </strong><span>your data</span></div>
 				@Html.HiddenFor(m => m.PublicId, new Dictionary<string, object>() { { "class", "form-control" }, { "data-bind", "value: PublicId" } })
 
+				<div class="form-group" data-bind="visible: loading">
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                            <span class="sr-only">loading...</span>
+                        </div>
+                    </div>
+                </div>
+
 	<#			foreach (var property in ScaffoldProperties) { 
 					if (!RelatedProperties.ContainsKey(property.Key)) {
 	#>
-				<div class="form-group">
+				<div class="form-group" data-bind="visible: loaded">
 					<div class="row">
 						@Html.LabelFor(m => m.<#= property.Key #>, new { @class = "col-md-3 control-label" })
 						<div class="col-md-9">
@@ -31,11 +39,11 @@
                     }
 					else {
 	#>
-				<div class="form-group">
+				<div class="form-group" data-bind="visible: loaded">
 					<div class="row">
 						@Html.LabelFor(m => m.<#= property.Key #>, new { @class = "col-md-3 control-label" })
 						<div class="col-md-9">
-							<span data-bind="text: <#= property.Key #>_Name"></span>
+							<span data-bind="text: <#= property.Key #>_Display"></span>
 						</div>
 					</div>
 				</div>
@@ -49,8 +57,8 @@
                 <hr />
                 <div class="row form-group">
                     <div class="col-md-12">
-						<a href="/<#= ViewDataTypeName #>/Edit/@ViewBag.PublicId" class="btn btn-info">@Resources.<#= ViewDataTypeName #>_Index_Edit</a>
-						<a href="/<#= ViewDataTypeName #>/Delete/@ViewBag.PublicId" class="btn btn-danger">@Resources.<#= ViewDataTypeName #>_Index_Delete</a>
+						<a href="/<#= ViewDataTypeName #>/Edit/@ViewBag.PublicId" class="btn btn-info" data-bind="enabled: loaded">@Resources.<#= ViewDataTypeName #>_Index_Edit</a>
+						<a href="/<#= ViewDataTypeName #>/Delete/@ViewBag.PublicId" class="btn btn-danger" data-bind="enabled: loaded">@Resources.<#= ViewDataTypeName #>_Index_Delete</a>
                     </div>
                 </div>
             </div>
@@ -70,7 +78,7 @@
 	foreach (var property in ScaffoldProperties) {
 		if (RelatedProperties.ContainsKey(property.Key)) {
 #>
-	<script src="/Scripts/Data/<#= RelatedPropertyTypes[property.Key] #>.js"></script>
+	<script src="/Scripts/Data/<#= RelatedDataSources[property.Key] #>.js"></script>
 <# 
         }
     }
@@ -81,7 +89,7 @@
 
 		$(document).ready( function() {
 		
-			<#= ViewDataTypeName #>Data.Init("@ViewBag.PublicId", $("form"));
+			<#= ViewDataTypeName #>Data.Init("@ViewBag.PublicId");
 
 			<#= ViewDataTypeName #>Data.Load($("form"));
 

@@ -79,16 +79,22 @@ namespace AzureTableStorageScaffolder.Scaffolders
             var scaffoldProperties = new Dictionary<string, string>();
             var relatedProperties = new Dictionary<string, string>();
             var relatedPropertyTypes = new Dictionary<string, string>();
+            var relatedDataSources = new Dictionary<string, string>();
+            var spacedPropertyNames = new Dictionary<string, string>();
 
             foreach (var scaffoldProperty in completeScaffoldProperties)
             {
                 scaffoldProperties.Add(scaffoldProperty.Key, scaffoldProperty.Value.TypeFullName);
+
+                spacedPropertyNames.Add(scaffoldProperty.Key, System.Text.RegularExpressions.Regex.Replace(scaffoldProperty.Value.TypeFullName, "([a-z]|[A-Z]{2,})([A-Z])", @"$1 $2"));
 
                 if (scaffoldProperty.Value.RelatedPropertyType != null)
                 {
                     relatedProperties.Add(scaffoldProperty.Key, GetPluralizedName(scaffoldProperty.Key));
 
                     relatedPropertyTypes.Add(scaffoldProperty.Key, scaffoldProperty.Value.RelatedPropertyType.Name);
+
+                    relatedDataSources.Add(scaffoldProperty.Key, GetPluralizedName(scaffoldProperty.Value.RelatedPropertyType.Name));
                 }
             }
 
@@ -111,6 +117,7 @@ namespace AzureTableStorageScaffolder.Scaffolders
                         {"ScaffoldProperties", scaffoldProperties},
                         {"RelatedProperties", relatedProperties},
                         {"RelatedPropertyTypes", relatedPropertyTypes},
+                        {"RelatedDataSources", relatedDataSources},
                         {"ViewDataType", modelType},
                         {"ViewDataTypeName", modelType.Name},
                         {"PluralizedName", GetPluralizedName(modelType.Name)},
