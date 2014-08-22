@@ -49,7 +49,7 @@ We're ready to add the models next. Models are any class that inherits from Blue
 
 The model classes expose properties that are serialized and deserialized to and from storage. These properties can only be primitive types.
 
-```
+```c#
 public class StockItem : BlueMarble.Shared.Azure.Storage.Table.Entity
 {
     public string StockKeepingUnit { get; set; }
@@ -85,7 +85,7 @@ In the code above, relationships are determined by decorating properties with th
 
 The next step is to create the related tables. This example specifically uses generic lookup tables. These tables all inherit from LookupEntity (see below).
 
-```
+```c#
 public class DimensionUnit : LookupEntity
 {
 }
@@ -93,7 +93,7 @@ public class DimensionUnit : LookupEntity
 
 The next code illustrates a shared LookupEntity class to inherit from for common lookup tables.
 
-```
+```c#
 public class LookupEntity : BlueMarble.Shared.Azure.Storage.Table.Entity
 {
     public string Name { get; set; }
@@ -104,6 +104,9 @@ public class LookupEntity : BlueMarble.Shared.Azure.Storage.Table.Entity
 ```
 
 Now you are ready to run the scaffolding process. 
+Right click anywhere in the web project, choose Add > New Scaffolded Item.
+
+![New Scaffolded Item](https://raw.githubusercontent.com/bluemarblesoftware/azure-scaffolder/master/readme%20resources/New%20Scaffolded%20Item.png)
 
 The resulting code will have the following components:
 - ApiController: All data interactions are done through an WebApi 2.0 controller. 
