@@ -22,7 +22,7 @@ install-package KendoUIWeb
 
 Next, add a storage context class to your web project. This class has to be a partial class, and enables the scaffolder to created extended partial classes for each model included in the scaffolding.
 
-```
+```c#
 public partial class StorageContext: BlueMarble.Shared.Azure.Storage.Table.StorageContext
 {
     public StorageContext(Microsoft.WindowsAzure.Storage.CloudStorageAccount StorageAccount)
@@ -78,8 +78,10 @@ public class StockItem : BlueMarble.Shared.Azure.Storage.Table.Entity
 ```
 
 In the code above, relationships are determined by decorating properties with the RelatedTable Attribute. 
-**A *known issue* in identifying the related table during scaffolding requires that the full namespace be used**
-**A good practice would be to post-fix related properties with *PublicId*. This property will store the Public Id of the related table entry**
+
+**A *known issue* in identifying the related table during scaffolding requires that the full namespace be used.**
+
+**A good practice would be to post-fix related properties with *PublicId*. This property will store the Public Id of the related table entry.**
 
 The next step is to create the related tables. This example specifically uses generic lookup tables. These tables all inherit from LookupEntity (see below).
 
