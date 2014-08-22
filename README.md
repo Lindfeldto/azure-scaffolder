@@ -7,9 +7,85 @@ The Blue Marble Software (Pty) Ltd. Azure Table Storage Scaffolder is a Visual S
 
 This is the first release, and many more will come.
 
-The code for this extension is available on GitHub at  https://github.com/bluemarblesoftware/azure-scaffolder.
+The code for this extension is available on GitHub at https://github.com/bluemarblesoftware/azure-scaffolder.
 
-In order to use this scaffolder, you will need to create Azure Table entities that inherit from BlueMarble.Shared.Azure.Table.Entity, see the sample above.
+A sample MVC Project for this extension is available on GitHub at https://github.com/bluemarblesoftware/azure-scaffolder/tree/master/MVCSample.
+
+In order to use this scaffolder, you will need to create Azure Table entities that inherit from BlueMarble.Shared.Azure.Table.Entity.
+
+```
+install-package BlueMarble.Shared
+install-package BlueMarble.Shared.Azure
+install-package KendoUIWeb
+install-package WindowsAzure.Storage
+```
+
+```
+public partial class StorageContext: BlueMarble.Shared.Azure.Storage.Table.StorageContext
+{
+    public StorageContext(Microsoft.WindowsAzure.Storage.CloudStorageAccount StorageAccount)
+        : base(StorageAccount)
+    {
+    }
+
+    public StorageContext()
+        : base(new Microsoft.WindowsAzure.Storage.CloudStorageAccount(
+            new Microsoft.WindowsAzure.Storage.Auth.StorageCredentials(
+                Properties.Settings.Default.StorageAccountName,
+                Properties.Settings.Default.StorageAccountKey), true))
+    {
+    }
+
+    public override void InitializeTables()
+    {
+        base.InitializeTables();
+    }
+}
+```
+
+```
+public class StockItem : BlueMarble.Shared.Azure.Storage.Table.Entity
+{
+    public string StockKeepingUnit { get; set; }
+
+    public string Name { get; set; }
+    public string Description { get; set; }
+
+    public decimal CostPrice { get; set; }
+    public decimal ListPrice { get; set; }
+
+    public int Width { get; set; }
+    public int Length { get; set; }
+    public int Height { get; set; }
+
+    [RelatedTable(Type=typeof(MVCSample.Models.DimensionUnit))]
+    public string DimensionUnitPublicId { get; set; }
+
+    public int Weight { get; set; }
+
+    [RelatedTable(Type = typeof(MVCSample.Models.WeightUnit))]
+    public string WeightUnitPublicId { get; set; }
+
+    [RelatedTable(Type = typeof(MVCSample.Models.Category))]
+    public string CategoryPublicId { get; set; }
+}
+```
+
+```
+public class DimensionUnit : LookupEntity
+{
+}
+```
+
+```
+public class LookupEntity : BlueMarble.Shared.Azure.Storage.Table.Entity
+{
+    public string Name { get; set; }
+    public string Description { get; set; }
+
+    public int Order { get; set; }
+}
+```
 
 You will also need to create a StorageContext class that inherits from BlueMarble.Shared.Azure.Table.StorageContext, see sample above.
 
