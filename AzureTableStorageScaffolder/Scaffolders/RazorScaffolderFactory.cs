@@ -55,7 +55,7 @@ namespace AzureTableStorageScaffolder.Scaffolders
                 displayName: Resources.WebFormsScaffolder_Name,
                 description: Resources.WebFormsScaffolder_Description,
                 author: "Blue Marble Software (Pty) Ltd.",
-                version: new Version(0, 1, 0, 0),
+                version: new Version(1, 0, 21, 0),
                 id: typeof(RazorScaffolder).Name,
                 icon: null,
                 gestures: null,

@@ -144,3 +144,5 @@ C:\Dev\GitHub\bluemarblesoftware\azure-scaffolder\AzureTableStorageScaffolderExt
 C:\Dev\GitHub\bluemarblesoftware\azure-scaffolder\AzureTableStorageScaffolderExtension\obj\Release\AzureTableStorageScaffolderExtension.dll
 C:\Dev\GitHub\bluemarblesoftware\azure-scaffolder\AzureTableStorageScaffolderExtension\obj\Release\AzureTableStorageScaffolderExtension.pdb
 C:\Dev\GitHub\bluemarblesoftware\azure-scaffolder\AzureTableStorageScaffolderExtension\obj\Release\extension.vsixmanifest
+C:\Dev\GitHub\bluemarblesoftware\azure-scaffolder\AzureTableStorageScaffolderExtension\bin\Release\Newtonsoft.Json.dll
+C:\Dev\GitHub\bluemarblesoftware\azure-scaffolder\AzureTableStorageScaffolderExtension\bin\Release\Newtonsoft.Json.xml

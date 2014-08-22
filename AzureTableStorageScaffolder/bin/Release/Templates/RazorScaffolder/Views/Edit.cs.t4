@@ -15,7 +15,7 @@
                 <h4>@string.Format(Resources.<#= ViewDataTypeName #>_Edit_Form_Header_Format, "<#= SpacedModelName #>")</h4>
                 <hr />
 				<div class="alert alert-warning" data-bind="visible: error" style="visibility: hidden;"><strong>Warning!</strong><span data-bind="text: errorMessage"></span></div>
-				<div class="alert alert-info" data-bind="visible: loading"><strong>Loading </strong><span>your data</span></div>
+				<div class="alert alert-info" data-bind="visible: loading"><strong>Loading </strong><span>your data...</span></div>
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 				@Html.HiddenFor(m => m.PublicId, new Dictionary<string, object>() { { "class", "form-control" }, { "data-bind", "value: PublicId" } })
 				
@@ -92,7 +92,7 @@
                 <hr />
                 <div class="row form-group">
                     <div class="col-md-12">
-                        <button data-bind="click: update" class="btn btn-default" data-bind="enabled: loaded">@Resources.<#= ViewDataTypeName #>_Edit_Save</button>
+                        <button data-bind="click: update, enabled: loaded" class="btn btn-default">@Resources.<#= ViewDataTypeName #>_Edit_Save</button>
                     </div>
                 </div>
             </div>
@@ -123,7 +123,7 @@
 
 		$(document).ready( function() {
 
-			<#= ViewDataTypeName #>Data.Init("@ViewBag.PublicId", $("form"));
+			<#= ViewDataTypeName #>Data.Init("@ViewBag.PublicId");
 
 			<#= ViewDataTypeName #>Data.Load($("form"));
 

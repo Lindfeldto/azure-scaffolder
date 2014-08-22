@@ -17,7 +17,7 @@
 				<div class="alert alert-warning" data-bind="visible: error" style="visibility: hidden;"><strong>Warning! </strong><span data-bind="text: errorMessage"></span></div>
                 @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 				@Html.HiddenFor(m => m.PublicId, new Dictionary<string, object>() { { "class", "form-control" }, { "data-bind", "value: PublicId" } })
-
+						
 <#				foreach (var property in ScaffoldProperties) { 
 					if ((property.Value == typeof(System.String).FullName) || (property.Value == typeof(System.Int32).FullName))
 					{
@@ -103,7 +103,7 @@
 	foreach (var property in ScaffoldProperties) {
 		if (RelatedProperties.ContainsKey(property.Key)) {
 #>
-	<script src="/Scripts/Data/<#= RelatedPropertyTypes[property.Key] #>.js"></script>
+	<script src="/Scripts/Data/<#= RelatedDataSources[property.Key] #>.js"></script>
 <# 
         }
     }
@@ -114,7 +114,8 @@
 
 		$(document).ready( function() {
 
-			<#= ViewDataTypeName #>Data.Init("NOTSET", $("form"));
+			<#= ViewDataTypeName #>Data.Init("NOTSET");
+			<#= ViewDataTypeName #>Data.Load($("form"));
 			
 		});
 

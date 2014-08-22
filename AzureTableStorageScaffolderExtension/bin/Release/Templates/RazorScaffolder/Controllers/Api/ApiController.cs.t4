@@ -17,53 +17,9 @@ namespace <#= DefaultNamespace #>.Controllers.Api
 	var dateTimePickerTypes = new List<string>() { typeof(System.DateTime).FullName };
 #>
 		[HttpGet]
-		public async Task<IEnumerable<<#= ViewDataTypeName #>>> Get(<# 
-	foreach (var property in ScaffoldProperties) {
-		if (RelatedProperties.ContainsKey(property.Key)) {
-#><#= RelatedPropertyTypes[property.Key] #> <#= property.Key #>, <# 
-        }
-    }
-#>bool? sorted)
+		public async Task<IEnumerable<<#= ViewDataTypeName #>>> Get()
 		{
-			var resulting<#= PluralizedName #> = new List<<#= ViewDataTypeName #>>();
-
-			var _<#= ViewDataType #> = db.Get<#= PluralizedName #>(string.Format("{0}_{1}", 
-				DealerWorld.Vehicle.Distribution.Services.Models.StorageContext.Constants.StorageTableNames.<#= PluralizedName #>, 
-				<#= ViewDataType #>));
-			
-<# 
-	foreach (var property in ScaffoldProperties) {
-		if (RelatedProperties.ContainsKey(property.Key)) {
-#>
-
-            var unique<#= RelatedDataSources[property.Key] #> = _<#= RelatedDataSources[property.Key] #>
-                .Select(m => m.Code)
-                .Distinct()
-                .ToList();
-
-            var _unique_<#= RelatedDataSources[property.Key] #> = new List<<#= property.Key #>>();
-
-            foreach (var unique<#= property.Key #> in unique<#= RelatedDataSources[property.Key] #>)
-            {
-                var private<#= property.Key #>Entity = BlueMarble.Shared.Azure.Storage.Table.Entity.GetPrivateEntity(new <#= property.Key #>(unique<#= property.Key #>));
-
-                var <#= property.Key #> = db.Get<#= property.Key #>(private<#= property.Key #>Entity.PartitionKey, private<#= property.Key #>Entity.RowKey);
-                _unique_<#= RelatedDataSources[property.Key] #>.Add(<#= property.Key #>.GetPublicEntity<<#= property.Key #>>());
-            }
-
-            foreach (var _<#= property.Key #> in _<#= RelatedDataSources[property.Key] #>)
-            {
-                _<#= property.Key #>.AccessoryCode = _<#= RelatedDataSources[property.Key] #>.Where(m => m.PublicId == _<#= property.Key #>.Code).FirstOrDefault().Name;
-
-                resulting<#= RelatedDataSources[property.Key] #>.Add(_<#= property.Key #>.GetPublicEntity<<#= property.Key #>>());
-            }
-
-<# 
-        }
-    }
-#>
-			
-			return resulting<#= PluralizedName #>;
+			return db.Get<#= PluralizedName #>();
 		}
 
 		[HttpGet]
@@ -75,11 +31,11 @@ namespace <#= DefaultNamespace #>.Controllers.Api
 		}
 
 		[HttpPost]
-		public async Task<string> Post(<#= ViewDataTypeName #> entity)
+		public string Post(<#= ViewDataTypeName #> entity)
 		{
 			if (ModelState.IsValid)
 			{
-				await db.Insert<#= ViewDataTypeName #>Async(entity);
+				db.Insert<#= ViewDataTypeName #>(entity);
 
 				entity.PublicId = entity.GetPublicId();
 				return entity.GetPublicEntity<<#= ViewDataTypeName #>>().PublicId;
@@ -89,11 +45,11 @@ namespace <#= DefaultNamespace #>.Controllers.Api
 		}
 
 		[HttpPut]
-		public async Task Put(string id, <#= ViewDataTypeName #> entity)
+		public void Put(string id, <#= ViewDataTypeName #> entity)
 		{
 			if (ModelState.IsValid)
 			{
-				await db.Update<#= ViewDataTypeName #>Async(entity.GetPrivateEntity<<#= ViewDataTypeName #>>());
+				db.Update<#= ViewDataTypeName #>(entity.GetPrivateEntity<<#= ViewDataTypeName #>>());
 			}
 		}
 

@@ -107,9 +107,9 @@
 			$("#table").dataTable({
 		        "sAjaxSource": "/api/<#= ViewDataTypeName #>",
 		        "fnServerData": fnServerObjectToArray([<#
-				foreach (var property in ScaffoldProperties) { if (!RelatedProperties.ContainsKey(property.Key)) {
+				foreach (var property in ScaffoldProperties) { 
 #>"<#= property.Key #>", <#
-				} }
+				} 
 #>"PublicId"])
 		    });
 

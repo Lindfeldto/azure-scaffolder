@@ -51,7 +51,7 @@
                 <hr />
                 <div class="row form-group">
                     <div class="col-md-12">
-                        <button data-bind="click: delete" class="btn btn-warning">@Resources.<#= ViewDataTypeName #>_Delete_Delete</button>
+                        <button data-bind="click: delete, enabled: loaded" class="btn btn-warning">@Resources.<#= ViewDataTypeName #>_Delete_Delete</button>
                     </div>
                 </div>
             </div>
@@ -71,7 +71,7 @@
 	foreach (var property in ScaffoldProperties) {
 		if (RelatedProperties.ContainsKey(property.Key)) {
 #>
-	<script src="/Scripts/Data/<#= RelatedPropertyTypes[property.Key] #>.js"></script>
+	<script src="/Scripts/Data/<#= RelatedDataSources[property.Key] #>.js"></script>
 <# 
         }
     }
@@ -82,7 +82,7 @@
 
 		$(document).ready( function() {
 		
-			<#= ViewDataTypeName #>Data.Init("@ViewBag.PublicId", $("form"));
+			<#= ViewDataTypeName #>Data.Init("@ViewBag.PublicId");
 
 			<#= ViewDataTypeName #>Data.Load($("form"));
 

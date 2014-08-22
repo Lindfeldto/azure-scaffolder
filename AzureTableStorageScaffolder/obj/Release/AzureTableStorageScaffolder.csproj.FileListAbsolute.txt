@@ -106,7 +106,6 @@ C:\Dev\GitHub\bluemarblesoftware\azure-scaffolder\AzureTableStorageScaffolder\bi
 C:\Dev\GitHub\bluemarblesoftware\azure-scaffolder\AzureTableStorageScaffolder\bin\Release\Microsoft.Data.Edm.dll
 C:\Dev\GitHub\bluemarblesoftware\azure-scaffolder\AzureTableStorageScaffolder\bin\Release\Microsoft.Data.OData.dll
 C:\Dev\GitHub\bluemarblesoftware\azure-scaffolder\AzureTableStorageScaffolder\bin\Release\Microsoft.Data.Services.Client.dll
-C:\Dev\GitHub\bluemarblesoftware\azure-scaffolder\AzureTableStorageScaffolder\bin\Release\Microsoft.Practices.EnterpriseLibrary.SemanticLogging.dll
 C:\Dev\GitHub\bluemarblesoftware\azure-scaffolder\AzureTableStorageScaffolder\bin\Release\Microsoft.WindowsAzure.Configuration.dll
 C:\Dev\GitHub\bluemarblesoftware\azure-scaffolder\AzureTableStorageScaffolder\bin\Release\Microsoft.WindowsAzure.Storage.dll
 C:\Dev\GitHub\bluemarblesoftware\azure-scaffolder\AzureTableStorageScaffolder\bin\Release\Newtonsoft.Json.dll
@@ -115,7 +114,6 @@ C:\Dev\GitHub\bluemarblesoftware\azure-scaffolder\AzureTableStorageScaffolder\bi
 C:\Dev\GitHub\bluemarblesoftware\azure-scaffolder\AzureTableStorageScaffolder\bin\Release\Microsoft.Data.Edm.xml
 C:\Dev\GitHub\bluemarblesoftware\azure-scaffolder\AzureTableStorageScaffolder\bin\Release\Microsoft.Data.OData.xml
 C:\Dev\GitHub\bluemarblesoftware\azure-scaffolder\AzureTableStorageScaffolder\bin\Release\Microsoft.Data.Services.Client.xml
-C:\Dev\GitHub\bluemarblesoftware\azure-scaffolder\AzureTableStorageScaffolder\bin\Release\Microsoft.Practices.EnterpriseLibrary.SemanticLogging.xml
 C:\Dev\GitHub\bluemarblesoftware\azure-scaffolder\AzureTableStorageScaffolder\bin\Release\Microsoft.WindowsAzure.Storage.xml
 C:\Dev\GitHub\bluemarblesoftware\azure-scaffolder\AzureTableStorageScaffolder\bin\Release\Newtonsoft.Json.xml
 C:\Dev\GitHub\bluemarblesoftware\azure-scaffolder\AzureTableStorageScaffolder\bin\Release\System.Spatial.xml
@@ -171,3 +169,4 @@ C:\Dev\GitHub\bluemarblesoftware\azure-scaffolder\AzureTableStorageScaffolder\ob
 C:\Dev\GitHub\bluemarblesoftware\azure-scaffolder\AzureTableStorageScaffolder\obj\Release\AzureTableStorageScaffolder.csproj.GenerateResource.Cache
 C:\Dev\GitHub\bluemarblesoftware\azure-scaffolder\AzureTableStorageScaffolder\obj\Release\AzureTableStorageScaffolder.dll
 C:\Dev\GitHub\bluemarblesoftware\azure-scaffolder\AzureTableStorageScaffolder\obj\Release\AzureTableStorageScaffolder.pdb
+C:\Dev\GitHub\bluemarblesoftware\azure-scaffolder\AzureTableStorageScaffolder\bin\Release\Microsoft.WindowsAzure.Configuration.xml

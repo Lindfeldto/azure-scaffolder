@@ -122,6 +122,8 @@ var <#= ViewDataTypeName #>Data = <#= ViewDataTypeName #>Data || (function(){
 			that.ViewModel.loading = true;
 			that.ViewModel.loaded = false;
 
+			that.Bind(form);
+
 			$.ajax({
 				url: '/api/<#= ViewDataTypeName #>/' + that.PublicId,
 				type: 'GET',
@@ -137,8 +139,6 @@ var <#= ViewDataTypeName #>Data = <#= ViewDataTypeName #>Data || (function(){
 
 				}
 			});
-
-			that.Bind(form);
 
 		},
 		LoadEntity: function(data, form){
@@ -217,10 +217,17 @@ if (RelatedProperties.ContainsKey(property.Key)) {
 			hasChanges: false,
 			saving: false,
 			saved: false,
+			creating: false,
+			created: false,
+			deleting: false,
+			deleted: false,
 			loading: true,
 			loaded: false,
 			error: false,
-			errorMessage: ''
+			errorMessage: '',
+			update: undefined,
+			delete: undefined,
+			create: undefined
 				
 		}),
 		Bind: function(form) {
@@ -266,6 +273,9 @@ if (RelatedProperties.ContainsKey(property.Key)) {
 	} 
 #>
 				
+			that.ViewModel.update = that.Update;
+			that.ViewModel.delete = that.Delete;
+			that.ViewModel.create = that.Create;
 		}
 	};
 }());

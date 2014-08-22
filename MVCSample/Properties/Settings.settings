@@ -1,0 +1,12 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="MVCSample.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="StorageAccountName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">storagedevirdub01</Value>
+    </Setting>
+    <Setting Name="StorageAccountKey" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">CQ3/LwtTfvfqUQGGt+CfOgG+bvN7CZjtxRPyufSQJhEMzeO0sD+kQB94tw6ZuhYqqGcKB+xiY6P7O4itS7C8lA==</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
