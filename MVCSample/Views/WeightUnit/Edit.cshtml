@@ -1,0 +1,96 @@
+﻿@model MVCSample.Models.WeightUnit
+@using MVCSample.Views.WeightUnit
+
+@{
+	ViewBag.Title = string.Format(Resources.WeightUnit_Edit_Title_Format, "Weight Unit");
+}
+
+<h2>@ViewBag.Title.</h2>
+<div class="row">
+    <section id="updateForm">
+        <form id="form">
+			<div class="col-md-8">
+                @Html.AntiForgeryToken()
+                <h4>@string.Format(Resources.WeightUnit_Edit_Form_Header_Format, "Weight Unit")</h4>
+                <hr />
+				<div class="alert alert-warning" data-bind="visible: error" style="visibility: hidden;"><strong>Warning!</strong><span data-bind="text: errorMessage"></span></div>
+				<div class="alert alert-info" data-bind="visible: loading"><strong>Loading </strong><span>your data...</span></div>
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+				@Html.HiddenFor(m => m.PublicId, new Dictionary<string, object>() { { "class", "form-control" }, { "data-bind", "value: PublicId" } })
+				
+				<div class="form-group" data-bind="visible: loading">
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                            <span class="sr-only">loading...</span>
+                        </div>
+                    </div>
+                </div>
+				
+				<div class="form-group" data-bind="visible: loaded">
+					<div class="row">
+						@Html.LabelFor(m => m.ModelGuid, new { @class = "col-md-3 control-label" })
+						<div class="col-md-9">
+							@Html.TextBoxFor(m => m.ModelGuid, new Dictionary<string, object>() { { "class", "form-control" }, { "data-bind", "value: ModelGuid" }, { "data-role", "datetimepicker" } })
+							@Html.ValidationMessageFor(m => m.ModelGuid, "", new { @class = "text-danger" })
+						</div>
+					</div>
+				</div>
+				<div class="form-group" data-bind="visible: loaded">
+					<div class="row">
+						@Html.LabelFor(m => m.Name, new { @class = "col-md-3 control-label" })
+						<div class="col-md-9">
+							@Html.TextBoxFor(m => m.Name, new Dictionary<string, object>() { { "class", "form-control" }, { "data-bind", "value: Name" } })
+							@Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+						</div>
+					</div>
+				</div>
+				<div class="form-group" data-bind="visible: loaded">
+					<div class="row">
+						@Html.LabelFor(m => m.Description, new { @class = "col-md-3 control-label" })
+						<div class="col-md-9">
+							@Html.TextBoxFor(m => m.Description, new Dictionary<string, object>() { { "class", "form-control" }, { "data-bind", "value: Description" } })
+							@Html.ValidationMessageFor(m => m.Description, "", new { @class = "text-danger" })
+						</div>
+					</div>
+				</div>
+				<div class="form-group" data-bind="visible: loaded">
+					<div class="row">
+						@Html.LabelFor(m => m.Order, new { @class = "col-md-3 control-label" })
+						<div class="col-md-9">
+							@Html.TextBoxFor(m => m.Order, new Dictionary<string, object>() { { "class", "form-control" }, { "data-bind", "value: Order" } })
+							@Html.ValidationMessageFor(m => m.Order, "", new { @class = "text-danger" })
+						</div>
+					</div>
+				</div>
+			</div>
+            <div class="col-md-4">
+                <h4>@Resources.WeightUnit_Edit_Form_Options</h4>
+                <hr />
+                <div class="row form-group">
+                    <div class="col-md-12">
+                        <button data-bind="click: update, enabled: loaded" class="btn btn-default">@Resources.WeightUnit_Edit_Save</button>
+                    </div>
+                </div>
+            </div>
+		</form>
+	</section>
+</div>
+
+@section scripts{
+	@Scripts.Render("~/bundles/jqueryval")
+	@Scripts.Render("~/bundles/kendo")
+
+	<script src="/Scripts/Data/WeightUnit.js"></script>
+
+	<script type="text/javascript">
+
+		$(document).ready( function() {
+
+			WeightUnitData.Init("@ViewBag.PublicId");
+
+			WeightUnitData.Load($("form"));
+
+		});
+
+	</script>
+}

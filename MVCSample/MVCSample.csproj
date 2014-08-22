@@ -42,8 +42,9 @@
     <Reference Include="BlueMarble.Shared">
       <HintPath>..\Solutions\packages\BlueMarble.Shared.1.0.5\lib\net451\BlueMarble.Shared.dll</HintPath>
     </Reference>
-    <Reference Include="BlueMarble.Shared.Azure">
-      <HintPath>..\Solutions\packages\BlueMarble.Shared.Azure.1.0.51\lib\net451\BlueMarble.Shared.Azure.dll</HintPath>
+    <Reference Include="BlueMarble.Shared.Azure, Version=1.0.53.32672, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Solutions\packages\BlueMarble.Shared.Azure.1.0.53\lib\net451\BlueMarble.Shared.Azure.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Data.Edm, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -59,9 +60,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Solutions\packages\Microsoft.WindowsAzure.ConfigurationManager.1.8.0.0\lib\net35-full\Microsoft.WindowsAzure.Configuration.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.WindowsAzure.Storage, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+    <Reference Include="Microsoft.WindowsAzure.Storage, Version=4.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\Solutions\packages\WindowsAzure.Storage.4.1.0\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
+      <HintPath>..\Solutions\packages\WindowsAzure.Storage.4.2.1\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -195,14 +196,34 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Api\CategoryApiController.cs" />
+    <Compile Include="Controllers\Api\DimensionUnitApiController.cs" />
+    <Compile Include="Controllers\Api\StockItemApiController.cs" />
+    <Compile Include="Controllers\Api\StockUnitApiController.cs" />
+    <Compile Include="Controllers\Api\WeightUnitApiController.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\DimensionUnitController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\StockItemController.cs" />
+    <Compile Include="Controllers\StockUnitController.cs" />
+    <Compile Include="Controllers\WeightUnitController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\StockUnit.cs" />
+    <Compile Include="Models\StorageContext.Category.cs" />
     <Compile Include="Models\StorageContext.cs" />
+    <Compile Include="Models\StorageContext.DimensionUnit.cs" />
+    <Compile Include="Models\StorageContext.KeyHelpers.Category.cs" />
+    <Compile Include="Models\StorageContext.KeyHelpers.DimensionUnit.cs" />
+    <Compile Include="Models\StorageContext.KeyHelpers.StockItem.cs" />
+    <Compile Include="Models\StorageContext.KeyHelpers.StockUnit.cs" />
+    <Compile Include="Models\StorageContext.KeyHelpers.WeightUnit.cs" />
+    <Compile Include="Models\StorageContext.StockItem.cs" />
+    <Compile Include="Models\StorageContext.StockUnit.cs" />
+    <Compile Include="Models\StorageContext.WeightUnit.cs" />
     <Compile Include="Models\WeightUnit.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\DimensionUnit.cs" />
@@ -215,6 +236,31 @@
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="Views\Category\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\DimensionUnit\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StockItem\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\StockUnit\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\WeightUnit\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -399,6 +445,16 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\Data\Categories.js" />
+    <Content Include="Scripts\Data\Category.js" />
+    <Content Include="Scripts\Data\DimensionUnit.js" />
+    <Content Include="Scripts\Data\DimensionUnits.js" />
+    <Content Include="Scripts\Data\StockItem.js" />
+    <Content Include="Scripts\Data\StockItems.js" />
+    <Content Include="Scripts\Data\StockUnit.js" />
+    <Content Include="Scripts\Data\StockUnits.js" />
+    <Content Include="Scripts\Data\WeightUnit.js" />
+    <Content Include="Scripts\Data\WeightUnits.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -927,6 +983,31 @@
     <Content Include="Scripts\kendo\2014.1.318\kendo.binder.min.js.map" />
     <Content Include="Scripts\kendo\2014.1.318\kendo.autocomplete.min.js.map" />
     <Content Include="Scripts\kendo\2014.1.318\jquery.min.map" />
+    <Content Include="Views\StockItem\Index.cshtml" />
+    <Content Include="Views\StockItem\Create.cshtml" />
+    <Content Include="Views\StockItem\Edit.cshtml" />
+    <Content Include="Views\StockItem\Delete.cshtml" />
+    <Content Include="Views\StockItem\Details.cshtml" />
+    <Content Include="Views\Category\Index.cshtml" />
+    <Content Include="Views\Category\Create.cshtml" />
+    <Content Include="Views\Category\Edit.cshtml" />
+    <Content Include="Views\Category\Delete.cshtml" />
+    <Content Include="Views\Category\Details.cshtml" />
+    <Content Include="Views\StockUnit\Index.cshtml" />
+    <Content Include="Views\StockUnit\Create.cshtml" />
+    <Content Include="Views\StockUnit\Edit.cshtml" />
+    <Content Include="Views\StockUnit\Delete.cshtml" />
+    <Content Include="Views\StockUnit\Details.cshtml" />
+    <Content Include="Views\DimensionUnit\Index.cshtml" />
+    <Content Include="Views\DimensionUnit\Create.cshtml" />
+    <Content Include="Views\DimensionUnit\Edit.cshtml" />
+    <Content Include="Views\DimensionUnit\Delete.cshtml" />
+    <Content Include="Views\DimensionUnit\Details.cshtml" />
+    <Content Include="Views\WeightUnit\Index.cshtml" />
+    <Content Include="Views\WeightUnit\Create.cshtml" />
+    <Content Include="Views\WeightUnit\Edit.cshtml" />
+    <Content Include="Views\WeightUnit\Delete.cshtml" />
+    <Content Include="Views\WeightUnit\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -937,6 +1018,28 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\Category\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\DimensionUnit\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\StockItem\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\StockUnit\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\WeightUnit\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -1,0 +1,104 @@
+﻿@model MVCSample.Models.WeightUnit
+@using MVCSample.Views.WeightUnit
+
+@{
+	ViewBag.Title = string.Format(Resources.WeightUnit_Index_Title_Format, "Weight Units");
+}
+
+<h2>@ViewBag.Title.</h2>
+
+<p>
+    @Html.ActionLink(Resources.WeightUnit_Index_Create_New, Resources.WeightUnit_Index_Create, null, new { @class = "btn btn-success" })
+</p>
+<div class="row">
+    <div class="col-md-12">
+        <section id="indexForm">
+			<table id="table" class="table table-striped table-bordered responsive" data-ajax="/api/WeightUnit">
+                <thead>
+                    <tr>
+                        <th>
+							@Html.LabelFor(m => m.ModelGuid, new { @class = "control-label" })
+						</th>
+                        <th>
+							@Html.LabelFor(m => m.Name, new { @class = "control-label" })
+						</th>
+                        <th>
+							@Html.LabelFor(m => m.Description, new { @class = "control-label" })
+						</th>
+                        <th>
+							@Html.LabelFor(m => m.Order, new { @class = "control-label" })
+						</th>
+                        <th>&nbsp;</th>
+                    </tr>
+                </thead>
+            </table>
+		</section>
+	</div>
+</div>
+
+@section scripts{
+	@Scripts.Render("~/bundles/jqueryval")
+	@Scripts.Render("~/bundles/kendo")
+
+    <script src="http://cdn.datatables.net/1.10.1/js/jquery.dataTables.min.js"></script>
+    <script src="http://cdn.datatables.net/plug-ins/725b2a2115b/integration/bootstrap/3/dataTables.bootstrap.js"></script>
+    <script src="http://cdn.datatables.net/responsive/1.0.0/js/dataTables.responsive.js"></script>
+	
+	<script src="/Scripts/Data/WeightUnit.js"></script>
+
+	<script type="text/javascript">
+
+		fnServerObjectToArray = function (aElements) {
+            return function (sSource, aoData, fnCallback) {
+
+                $.ajax({
+                    "dataType": 'json',
+                    "type": "GET",
+                    "url": sSource,
+                    "data": aoData,
+                    "success": function (json) {
+
+                        var a = [];
+                        for (var i = 0, iLen = json.length ; i < iLen ; i++) {
+                            var inner = [];
+                            for (var j = 0, jLen = aElements.length ; j < jLen ; j++) {
+                                if (aElements[j] != "PublicId") {
+                                    inner.push(json[i][aElements[j]]);
+                                } else {
+                                    inner.push('\
+<div class="nav navbar-nav btn-group">\
+    <button type="button" class="btn btn-info" onClick="window.location.href=\'/WeightUnit/Details/' + json[i][aElements[j]] + '\'">@Resources.WeightUnit_Index_View</button>\
+    <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">\
+        <span class="caret"></span>\
+        <span class="sr-only">Toggle Dropdown</span>\
+    </button>\
+    <ul class="dropdown-menu" role="menu">\
+        <li><a href="/WeightUnit/Edit/' + json[i][aElements[j]] + '">@Resources.WeightUnit_Index_Edit</a></li>\
+        <li><a href="/WeightUnit/Delete/' + json[i][aElements[j]] + '">@Resources.WeightUnit_Index_Delete</a></li>\
+    </ul>\
+</div>');
+                                
+                                }
+                            }
+                            a.push(inner);
+                        }
+                        json.aaData = a;
+                        fnCallback(json);
+
+                    }
+                });
+
+            }
+        }
+
+		$(document).ready( function() {
+
+			$("#table").dataTable({
+		        "sAjaxSource": "/api/WeightUnit",
+		        "fnServerData": fnServerObjectToArray(["ModelGuid", "Name", "Description", "Order", "PublicId"])
+		    });
+
+		});
+
+	</script>
+}

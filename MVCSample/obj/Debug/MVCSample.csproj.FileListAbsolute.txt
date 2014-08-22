@@ -109,3 +109,9 @@ C:\Dev\GitHub\bluemarblesoftware\azure-scaffolder\MVCSample\bin\zh-Hant\System.S
 C:\Dev\GitHub\bluemarblesoftware\azure-scaffolder\MVCSample\obj\Debug\MVCSample.csprojResolveAssemblyReference.cache
 C:\Dev\GitHub\bluemarblesoftware\azure-scaffolder\MVCSample\obj\Debug\MVCSample.dll
 C:\Dev\GitHub\bluemarblesoftware\azure-scaffolder\MVCSample\obj\Debug\MVCSample.pdb
+C:\Dev\GitHub\bluemarblesoftware\azure-scaffolder\MVCSample\obj\Debug\MVCSample.Views.Category.Resources.resources
+C:\Dev\GitHub\bluemarblesoftware\azure-scaffolder\MVCSample\obj\Debug\MVCSample.Views.DimensionUnit.Resources.resources
+C:\Dev\GitHub\bluemarblesoftware\azure-scaffolder\MVCSample\obj\Debug\MVCSample.Views.StockItem.Resources.resources
+C:\Dev\GitHub\bluemarblesoftware\azure-scaffolder\MVCSample\obj\Debug\MVCSample.Views.StockUnit.Resources.resources
+C:\Dev\GitHub\bluemarblesoftware\azure-scaffolder\MVCSample\obj\Debug\MVCSample.Views.WeightUnit.Resources.resources
+C:\Dev\GitHub\bluemarblesoftware\azure-scaffolder\MVCSample\obj\Debug\MVCSample.csproj.GenerateResource.Cache

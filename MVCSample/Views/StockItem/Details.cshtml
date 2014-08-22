@@ -1,0 +1,165 @@
+﻿@model MVCSample.Models.StockItem
+@using MVCSample.Views.StockItem
+
+@{
+	ViewBag.Title = string.Format(Resources.StockItem_Details_Title_Format, "Stock Item");
+}
+
+<h2>@ViewBag.Title.</h2>
+<div class="row">
+    <section>
+        <form id="form">
+			<div class="col-md-8">
+				<h4>@string.Format(Resources.StockItem_Details_Form_Header_Format, "Stock Item")</h4>
+				<hr />
+				<div class="alert alert-info" data-bind="visible: loading"><strong>Loading </strong><span>your data</span></div>
+				@Html.HiddenFor(m => m.PublicId, new Dictionary<string, object>() { { "class", "form-control" }, { "data-bind", "value: PublicId" } })
+
+				<div class="form-group" data-bind="visible: loading">
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                            <span class="sr-only">loading...</span>
+                        </div>
+                    </div>
+                </div>
+
+					<div class="form-group" data-bind="visible: loaded">
+					<div class="row">
+						@Html.LabelFor(m => m.ModelGuid, new { @class = "col-md-3 control-label" })
+						<div class="col-md-9">
+							<span data-bind="text: ModelGuid"></span>
+						</div>
+					</div>
+				</div>
+					<div class="form-group" data-bind="visible: loaded">
+					<div class="row">
+						@Html.LabelFor(m => m.StockKeepingUnit, new { @class = "col-md-3 control-label" })
+						<div class="col-md-9">
+							<span data-bind="text: StockKeepingUnit"></span>
+						</div>
+					</div>
+				</div>
+					<div class="form-group" data-bind="visible: loaded">
+					<div class="row">
+						@Html.LabelFor(m => m.Name, new { @class = "col-md-3 control-label" })
+						<div class="col-md-9">
+							<span data-bind="text: Name"></span>
+						</div>
+					</div>
+				</div>
+					<div class="form-group" data-bind="visible: loaded">
+					<div class="row">
+						@Html.LabelFor(m => m.Description, new { @class = "col-md-3 control-label" })
+						<div class="col-md-9">
+							<span data-bind="text: Description"></span>
+						</div>
+					</div>
+				</div>
+					<div class="form-group" data-bind="visible: loaded">
+					<div class="row">
+						@Html.LabelFor(m => m.CostPrice, new { @class = "col-md-3 control-label" })
+						<div class="col-md-9">
+							<span data-bind="text: CostPrice"></span>
+						</div>
+					</div>
+				</div>
+					<div class="form-group" data-bind="visible: loaded">
+					<div class="row">
+						@Html.LabelFor(m => m.ListPrice, new { @class = "col-md-3 control-label" })
+						<div class="col-md-9">
+							<span data-bind="text: ListPrice"></span>
+						</div>
+					</div>
+				</div>
+					<div class="form-group" data-bind="visible: loaded">
+					<div class="row">
+						@Html.LabelFor(m => m.Width, new { @class = "col-md-3 control-label" })
+						<div class="col-md-9">
+							<span data-bind="text: Width"></span>
+						</div>
+					</div>
+				</div>
+					<div class="form-group" data-bind="visible: loaded">
+					<div class="row">
+						@Html.LabelFor(m => m.Length, new { @class = "col-md-3 control-label" })
+						<div class="col-md-9">
+							<span data-bind="text: Length"></span>
+						</div>
+					</div>
+				</div>
+					<div class="form-group" data-bind="visible: loaded">
+					<div class="row">
+						@Html.LabelFor(m => m.Height, new { @class = "col-md-3 control-label" })
+						<div class="col-md-9">
+							<span data-bind="text: Height"></span>
+						</div>
+					</div>
+				</div>
+					<div class="form-group" data-bind="visible: loaded">
+					<div class="row">
+						@Html.LabelFor(m => m.DimensionUnitPublicId, new { @class = "col-md-3 control-label" })
+						<div class="col-md-9">
+							<span data-bind="text: DimensionUnitPublicId_Display"></span>
+						</div>
+					</div>
+				</div>
+					<div class="form-group" data-bind="visible: loaded">
+					<div class="row">
+						@Html.LabelFor(m => m.Weight, new { @class = "col-md-3 control-label" })
+						<div class="col-md-9">
+							<span data-bind="text: Weight"></span>
+						</div>
+					</div>
+				</div>
+					<div class="form-group" data-bind="visible: loaded">
+					<div class="row">
+						@Html.LabelFor(m => m.WeightUnitPublicId, new { @class = "col-md-3 control-label" })
+						<div class="col-md-9">
+							<span data-bind="text: WeightUnitPublicId_Display"></span>
+						</div>
+					</div>
+				</div>
+					<div class="form-group" data-bind="visible: loaded">
+					<div class="row">
+						@Html.LabelFor(m => m.CategoryPublicId, new { @class = "col-md-3 control-label" })
+						<div class="col-md-9">
+							<span data-bind="text: CategoryPublicId_Display"></span>
+						</div>
+					</div>
+				</div>
+				</div>
+            <div class="col-md-4">
+                <h4>@Resources.StockItem_Details_Form_Options</h4>
+                <hr />
+                <div class="row form-group">
+                    <div class="col-md-12">
+						<a href="/StockItem/Edit/@ViewBag.PublicId" class="btn btn-info" data-bind="enabled: loaded">@Resources.StockItem_Index_Edit</a>
+						<a href="/StockItem/Delete/@ViewBag.PublicId" class="btn btn-danger" data-bind="enabled: loaded">@Resources.StockItem_Index_Delete</a>
+                    </div>
+                </div>
+            </div>
+		</form>
+	</section>
+</div>
+
+@section scripts{
+	@Scripts.Render("~/bundles/jqueryval")
+	@Scripts.Render("~/bundles/kendo")
+
+	<script src="/Scripts/Data/DimensionUnits.js"></script>
+	<script src="/Scripts/Data/WeightUnits.js"></script>
+	<script src="/Scripts/Data/Categories.js"></script>
+	<script src="/Scripts/Data/StockItem.js"></script>
+
+	<script type="text/javascript">
+
+		$(document).ready( function() {
+		
+			StockItemData.Init("@ViewBag.PublicId");
+
+			StockItemData.Load($("form"));
+
+		});
+
+	</script>
+}

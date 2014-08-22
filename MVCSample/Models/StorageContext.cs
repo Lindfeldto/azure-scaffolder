@@ -5,7 +5,7 @@ using System.Web;
 
 namespace MVCSample.Models
 {
-    public class StorageContext: BlueMarble.Shared.Azure.Storage.Table.StorageContext
+    public partial class StorageContext: BlueMarble.Shared.Azure.Storage.Table.StorageContext
     {
         public StorageContext(Microsoft.WindowsAzure.Storage.CloudStorageAccount StorageAccount)
             : base(StorageAccount)

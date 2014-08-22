@@ -1,0 +1,108 @@
+﻿@model MVCSample.Models.StockUnit
+@using MVCSample.Views.StockUnit
+
+@{
+	ViewBag.Title = string.Format(Resources.StockUnit_Delete_Title_Format, "Stock Unit");
+}
+
+<h2>@ViewBag.Title.</h2>
+<div class="row">
+    <section id="deleteForm">
+        <form id="form">
+			<div class="col-md-8">
+				<h4>@string.Format(Resources.StockUnit_Delete_Form_Header_Format, "Stock Unit")</h4>
+				<hr />
+				<div class="alert alert-warning" data-bind="visible: error" style="visibility: hidden;"><strong>Warning!</strong><span data-bind="text: errorMessage"></span></div>
+				<div class="alert alert-info" data-bind="visible: loading"><strong>Loading </strong><span>your data</span></div>
+				@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+				@Html.HiddenFor(m => m.PublicId, new Dictionary<string, object>() { { "class", "form-control" }, { "data-bind", "value: PublicId" } })
+				
+					<div class="form-group">
+					<div class="row">
+						@Html.LabelFor(m => m.ModelGuid, new { @class = "col-md-3 control-label" })
+						<div class="col-md-9">
+							<span data-bind="text: ModelGuid"></span>
+						</div>
+					</div>
+				</div>
+					<div class="form-group">
+					<div class="row">
+						@Html.LabelFor(m => m.StockItemPublicId, new { @class = "col-md-3 control-label" })
+						<div class="col-md-9">
+							<span data-bind="text: StockItemPublicId_Name"></span>
+						</div>
+					</div>
+				</div>
+					<div class="form-group">
+					<div class="row">
+						@Html.LabelFor(m => m.TransactionDateTime, new { @class = "col-md-3 control-label" })
+						<div class="col-md-9">
+							<span data-bind="text: TransactionDateTime"></span>
+						</div>
+					</div>
+				</div>
+					<div class="form-group">
+					<div class="row">
+						@Html.LabelFor(m => m.StockIn, new { @class = "col-md-3 control-label" })
+						<div class="col-md-9">
+							<span data-bind="text: StockIn"></span>
+						</div>
+					</div>
+				</div>
+					<div class="form-group">
+					<div class="row">
+						@Html.LabelFor(m => m.ReceiptNumber, new { @class = "col-md-3 control-label" })
+						<div class="col-md-9">
+							<span data-bind="text: ReceiptNumber"></span>
+						</div>
+					</div>
+				</div>
+					<div class="form-group">
+					<div class="row">
+						@Html.LabelFor(m => m.StockOut, new { @class = "col-md-3 control-label" })
+						<div class="col-md-9">
+							<span data-bind="text: StockOut"></span>
+						</div>
+					</div>
+				</div>
+					<div class="form-group">
+					<div class="row">
+						@Html.LabelFor(m => m.InvoiceNumber, new { @class = "col-md-3 control-label" })
+						<div class="col-md-9">
+							<span data-bind="text: InvoiceNumber"></span>
+						</div>
+					</div>
+				</div>
+				</div>
+            <div class="col-md-4">
+                <h4>@Resources.StockUnit_Delete_Form_Options</h4>
+                <hr />
+                <div class="row form-group">
+                    <div class="col-md-12">
+                        <button data-bind="click: delete, enabled: loaded" class="btn btn-warning">@Resources.StockUnit_Delete_Delete</button>
+                    </div>
+                </div>
+            </div>
+		</form>
+	</section>
+</div>
+
+@section scripts{
+	@Scripts.Render("~/bundles/jqueryval")
+	@Scripts.Render("~/bundles/kendo")
+	
+	<script src="/Scripts/Data/StockItems.js"></script>
+	<script src="/Scripts/Data/StockUnit.js"></script>
+
+	<script type="text/javascript">
+
+		$(document).ready( function() {
+		
+			StockUnitData.Init("@ViewBag.PublicId");
+
+			StockUnitData.Load($("form"));
+
+		});
+
+	</script>
+}
