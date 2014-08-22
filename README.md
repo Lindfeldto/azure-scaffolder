@@ -11,14 +11,16 @@ The code for this extension is available on GitHub at https://github.com/bluemar
 
 A sample MVC Project for this extension is available on GitHub at https://github.com/bluemarblesoftware/azure-scaffolder/tree/master/MVCSample.
 
-In order to use this scaffolder, you will need to create Azure Table entities that inherit from BlueMarble.Shared.Azure.Table.Entity.
+In order to use this scaffolder, you will need to follow these steps. To start, install the following NuGet dependencies.
 
 ```
+install-package WindowsAzure.Storage
 install-package BlueMarble.Shared
 install-package BlueMarble.Shared.Azure
 install-package KendoUIWeb
-install-package WindowsAzure.Storage
 ```
+
+Next, add a storage context class to your web project. This class has to be a partial class, and enables the scaffolder to created extended partial classes for each model included in the scaffolding.
 
 ```
 public partial class StorageContext: BlueMarble.Shared.Azure.Storage.Table.StorageContext
@@ -42,6 +44,10 @@ public partial class StorageContext: BlueMarble.Shared.Azure.Storage.Table.Stora
     }
 }
 ```
+
+We're ready to add the models next. Models are any class that inherits from BlueMarble.Shared.Azure.Storage.Table.Entity, this class itself inherits from Microsoft.WindowsAzure.Storage.Table.TableEntity. 
+
+The model classes expose properties that are serialized and deserialized to and from storage. These properties can only be primitive types.
 
 ```
 public class StockItem : BlueMarble.Shared.Azure.Storage.Table.Entity
@@ -71,11 +77,19 @@ public class StockItem : BlueMarble.Shared.Azure.Storage.Table.Entity
 }
 ```
 
+In the code above, relationships are determined by decorating properties with the RelatedTable Attribute. 
+**A *known issue* in identifying the related table during scaffolding requires that the full namespace be used**
+**A good practice would be to post-fix related properties with *PublicId*. This property will store the Public Id of the related table entry**
+
+The next step is to create the related tables. This example specifically uses generic lookup tables. These tables all inherit from LookupEntity (see below).
+
 ```
 public class DimensionUnit : LookupEntity
 {
 }
 ```
+
+The next code illustrates a shared LookupEntity class to inherit from for common lookup tables.
 
 ```
 public class LookupEntity : BlueMarble.Shared.Azure.Storage.Table.Entity
@@ -87,9 +101,7 @@ public class LookupEntity : BlueMarble.Shared.Azure.Storage.Table.Entity
 }
 ```
 
-You will also need to create a StorageContext class that inherits from BlueMarble.Shared.Azure.Table.StorageContext, see sample above.
-
-To create relationships between two tables, use the RelatedTableAttribute, as per the sample above.
+Now you are ready to run the scaffolding process. 
 
 The resulting code will have the following components:
 - ApiController: All data interactions are done through an WebApi 2.0 controller. 
