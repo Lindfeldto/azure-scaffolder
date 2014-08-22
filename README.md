@@ -104,18 +104,26 @@ public class LookupEntity : BlueMarble.Shared.Azure.Storage.Table.Entity
 ```
 
 Now you are ready to run the scaffolding process. 
-Right click anywhere in the web project, choose Add > New Scaffolded Item.
+Right click anywhere in the web project, choose *Add* > *New Scaffolded Item*.
 
 ![New Scaffolded Item](https://raw.githubusercontent.com/bluemarblesoftware/azure-scaffolder/master/readme%20resources/New%20Scaffolded%20Item.png)
+
+Next choose *Razor Pages using Microsoft Azure Table Storage*
+
+![Razor Pages using Microsoft Azure Table Storage](https://raw.githubusercontent.com/bluemarblesoftware/azure-scaffolder/master/readme%20resources/Razor%20Pages%20using%20Microsoft%20Azure%20Table%20Storage.png)
+
+On the scaffold screen, select all of the models that you want to generate code for, and the storage context to extend.
+
+![Scaffold](https://github.com/bluemarblesoftware/azure-scaffolder/blob/master/readme%20resources/Scaffold.png)
 
 The resulting code will have the following components:
 - ApiController: All data interactions are done through an WebApi 2.0 controller. 
 - Controller: Only the required code to deal with showing the views. 
-- Views: Create, Update, Detail, Delete, Index views are created. Views use Telerik KendoUI components. •Create: Uses KendoUI MVVM components with an HTTP Post to upload the data 
-  - Update: Uses KendoUI MVVM components with an HTTP Get to retrieve the data, and an HTTP Put to upload the data 
-  - Detail: Uses KendoUI MVVM components with an HTTP Get to retrieve the data 
-  - Delete: Uses KendoUI MVVM components with an HTTP Get to retrieve the data 
-  - Index: Uses DataTables.net components with an HTTP Get to retrieve the data 
-
+- Views: Create, Update, Detail, Delete, Index views are created. Views use Telerik KendoUI components
+ - Create: Uses KendoUI MVVM components with an HTTP Post to upload the data 
+ - Edit: Uses KendoUI MVVM components with an HTTP Get to retrieve the data, and an HTTP Put to upload the data 
+ - Details: Uses KendoUI MVVM components with an HTTP Get to retrieve the data 
+ - Delete: Uses KendoUI MVVM components with an HTTP Get to retrieve the data 
+ - Index: Uses DataTables.net components with an HTTP Get to retrieve the data 
 - Scripts: A comprehensive data access script is generated for each table, and included on views where applicable. 
 - Models: A partial StorageContext is created containing code relevant to each Microsoft Azure Table entity. 
