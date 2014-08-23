@@ -8,6 +8,9 @@ namespace MVCSample.Models
 {
     public class StockUnit : BlueMarble.Shared.Azure.Storage.Table.Entity
     {
+        public StockUnit() : base() { }
+        public StockUnit(string publicId) : base(publicId) { }
+
         [RelatedTable(Type = typeof(MVCSample.Models.StockItem))]
         public string StockItemPublicId { get; set; }
 

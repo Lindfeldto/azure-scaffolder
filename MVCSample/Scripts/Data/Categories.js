@@ -17,7 +17,6 @@ var CategoriesData = CategoriesData || (function(){
 			schema: {
 
 				model: {
-					ModelGuid: 'ModelGuid',
 					Name: 'Name',
 					Description: 'Description',
 					Order: 'Order',

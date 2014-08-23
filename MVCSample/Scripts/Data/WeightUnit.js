@@ -41,7 +41,6 @@ var WeightUnitData = WeightUnitData || (function(){
 				type: 'PUT',
 				dataType: 'json',
 				data: {
-					ModelGuid: that.ModelGuid,
 					Name: that.Name,
 					Description: that.Description,
 					Order: that.Order,
@@ -71,7 +70,6 @@ var WeightUnitData = WeightUnitData || (function(){
 				type: 'POST',
 				dataType: 'json',
 				data: {
-					ModelGuid: that.ModelGuid,
 					Name: that.Name,
 					Description: that.Description,
 					Order: that.Order,
@@ -119,7 +117,6 @@ var WeightUnitData = WeightUnitData || (function(){
 		LoadEntity: function(data, form){
 
 			var that = this;
-			that.ViewModel.ModelGuid = data.ModelGuid;
 			that.ViewModel.Name = data.Name;
 			that.ViewModel.Description = data.Description;
 			that.ViewModel.Order = data.Order;
@@ -135,7 +132,6 @@ var WeightUnitData = WeightUnitData || (function(){
 		ViewModel: kendo.observable({
 			PublicId: '',
 		
-			ModelGuid: '',
 			Name: '',
 			Description: '',
 			Order: '',
@@ -178,7 +174,6 @@ var WeightUnitData = WeightUnitData || (function(){
 
 			that.ViewModel.PublicId = publicId;
 
-			that.ViewModel.ModelGuid = '';
 			that.ViewModel.Name = '';
 			that.ViewModel.Description = '';
 			that.ViewModel.Order = '';

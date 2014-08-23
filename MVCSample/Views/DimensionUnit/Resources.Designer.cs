@@ -178,7 +178,7 @@ namespace MVCSample.Views.DimensionUnit {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Update {0} entity..
+        ///   Looks up a localized string similar to Edit {0} entity..
         /// </summary>
         public static string DimensionUnit_Edit_Form_Header_Format {
             get {
@@ -205,7 +205,7 @@ namespace MVCSample.Views.DimensionUnit {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Update {0}.
+        ///   Looks up a localized string similar to Edit {0}.
         /// </summary>
         public static string DimensionUnit_Edit_Title_Format {
             get {
@@ -250,7 +250,7 @@ namespace MVCSample.Views.DimensionUnit {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Update {0} entity..
+        ///   Looks up a localized string similar to View {0} entities..
         /// </summary>
         public static string DimensionUnit_Index_Form_Header_Format {
             get {
@@ -259,7 +259,7 @@ namespace MVCSample.Views.DimensionUnit {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Update {0}.
+        ///   Looks up a localized string similar to View {0}.
         /// </summary>
         public static string DimensionUnit_Index_Title_Format {
             get {

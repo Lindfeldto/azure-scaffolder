@@ -8,6 +8,9 @@ namespace MVCSample.Models
 {
     public class StockItem : BlueMarble.Shared.Azure.Storage.Table.Entity
     {
+        public StockItem() : base() { }
+        public StockItem(string publicId) : base(publicId) { }
+
         public string StockKeepingUnit { get; set; }
 
         public string Name { get; set; }
@@ -20,7 +23,7 @@ namespace MVCSample.Models
         public int Length { get; set; }
         public int Height { get; set; }
 
-        [RelatedTable(Type=typeof(MVCSample.Models.DimensionUnit))]
+        [RelatedTable(Type = typeof(MVCSample.Models.DimensionUnit))]
         public string DimensionUnitPublicId { get; set; }
 
         public int Weight { get; set; }

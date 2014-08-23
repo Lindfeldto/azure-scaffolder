@@ -25,12 +25,12 @@ namespace MVCSample.Models
 
         public string GetDimensionUnitRowKey(DimensionUnit DimensionUnit)
         {
-            return GetRowKey();
+            return GetDimensionUnitRowKey(DimensionUnit.ModelGuid);
         }
 
-        public string GetDimensionUnitRowKey()
+        public string GetDimensionUnitRowKey(Guid ModelGuid)
         {
-            return GetRowKey();
+            return GetRowKey(ModelGuid.ToString());
         }
 
 		#endregion

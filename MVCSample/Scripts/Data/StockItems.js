@@ -17,7 +17,6 @@ var StockItemsData = StockItemsData || (function(){
 			schema: {
 
 				model: {
-					ModelGuid: 'ModelGuid',
 					StockKeepingUnit: 'StockKeepingUnit',
 					Name: 'Name',
 					Description: 'Description',

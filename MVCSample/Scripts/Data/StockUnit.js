@@ -41,7 +41,6 @@ var StockUnitData = StockUnitData || (function(){
 				type: 'PUT',
 				dataType: 'json',
 				data: {
-					ModelGuid: that.ModelGuid,
 					StockItemPublicId: that.StockItemPublicId,
 					TransactionDateTime: kendo.toString(this.TransactionDateTime, 'F'),
 					StockIn: that.StockIn,
@@ -74,7 +73,6 @@ var StockUnitData = StockUnitData || (function(){
 				type: 'POST',
 				dataType: 'json',
 				data: {
-					ModelGuid: that.ModelGuid,
 					StockItemPublicId: that.StockItemPublicId,
 					TransactionDateTime: kendo.toString(that.TransactionDateTime, 'F'),
 					StockIn: that.StockIn,
@@ -125,7 +123,6 @@ var StockUnitData = StockUnitData || (function(){
 		LoadEntity: function(data, form){
 
 			var that = this;
-			that.ViewModel.ModelGuid = data.ModelGuid;
 			that.ViewModel.StockItemPublicId = data.StockItemPublicId;
 			that.ViewModel.TransactionDateTime = data.TransactionDateTime;
 			that.ViewModel.StockIn = data.StockIn;
@@ -166,7 +163,6 @@ var StockUnitData = StockUnitData || (function(){
 			PublicId: '',
 			StockItemsDataSource: null,
 		
-			ModelGuid: '',
 			StockItemPublicId: '',
 			StockItemPublicId_Display: 'loading...',
 			TransactionDateTime: '',
@@ -214,7 +210,6 @@ var StockUnitData = StockUnitData || (function(){
 			that.ViewModel.PublicId = publicId;
 
 			that.ViewModel.StockItemsDataSource = StockItemsData.StockItemsDataSource;
-			that.ViewModel.ModelGuid = '';
 			that.ViewModel.StockItemPublicId = '';
 			that.ViewModel.StockItemPublicId_Display = 'loading...';
 			that.ViewModel.TransactionDateTime = '';

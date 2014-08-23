@@ -116,11 +116,11 @@
 
 	<!-- Edit -->
 	<data name="WeightUnit_Edit_Title_Format" xml:space="preserve">
-		<value>Update {0}</value>
+		<value>Edit {0}</value>
 	</data>
 
 	<data name="WeightUnit_Edit_Form_Header_Format" xml:space="preserve">
-		<value>Update {0} entity.</value>
+		<value>Edit {0} entity.</value>
 	</data>
 
 	<data name="WeightUnit_Edit_Form_Options" xml:space="preserve">
@@ -133,11 +133,11 @@
 
 	<!-- Index -->
 	<data name="WeightUnit_Index_Title_Format" xml:space="preserve">
-		<value>Update {0}</value>
+		<value>View {0}</value>
 	</data>
 
 	<data name="WeightUnit_Index_Form_Header_Format" xml:space="preserve">
-		<value>Update {0} entity.</value>
+		<value>View {0} entities.</value>
 	</data>
 
 	<data name="WeightUnit_Index_View" xml:space="preserve">

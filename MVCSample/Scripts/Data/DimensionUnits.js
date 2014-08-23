@@ -17,7 +17,6 @@ var DimensionUnitsData = DimensionUnitsData || (function(){
 			schema: {
 
 				model: {
-					ModelGuid: 'ModelGuid',
 					Name: 'Name',
 					Description: 'Description',
 					Order: 'Order',

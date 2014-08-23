@@ -17,7 +17,6 @@ var StockUnitsData = StockUnitsData || (function(){
 			schema: {
 
 				model: {
-					ModelGuid: 'ModelGuid',
 					StockItemPublicId: 'StockItemPublicId',
 					TransactionDateTime: 'TransactionDateTime',
 					StockIn: 'StockIn',

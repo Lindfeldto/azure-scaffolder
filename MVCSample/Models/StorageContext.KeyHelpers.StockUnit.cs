@@ -25,12 +25,12 @@ namespace MVCSample.Models
 
         public string GetStockUnitRowKey(StockUnit StockUnit)
         {
-            return GetRowKey();
+            return GetStockUnitRowKey(StockUnit.ModelGuid);
         }
 
-        public string GetStockUnitRowKey()
+        public string GetStockUnitRowKey(Guid ModelGuid)
         {
-            return GetRowKey();
+            return GetRowKey(ModelGuid.ToString());
         }
 
 		#endregion

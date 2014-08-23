@@ -25,12 +25,12 @@ namespace MVCSample.Models
 
         public string GetWeightUnitRowKey(WeightUnit WeightUnit)
         {
-            return GetRowKey();
+            return GetWeightUnitRowKey(WeightUnit.ModelGuid);
         }
 
-        public string GetWeightUnitRowKey()
+        public string GetWeightUnitRowKey(Guid ModelGuid)
         {
-            return GetRowKey();
+            return GetRowKey(ModelGuid.ToString());
         }
 
 		#endregion

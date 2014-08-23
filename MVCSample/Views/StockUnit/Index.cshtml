@@ -17,9 +17,6 @@
                 <thead>
                     <tr>
                         <th>
-							@Html.LabelFor(m => m.ModelGuid, new { @class = "control-label" })
-						</th>
-                        <th>
 							@Html.LabelFor(m => m.StockItemPublicId, new { @class = "control-label" })
 						</th>
                         <th>
@@ -105,7 +102,7 @@
 
 			$("#table").dataTable({
 		        "sAjaxSource": "/api/StockUnit",
-		        "fnServerData": fnServerObjectToArray(["ModelGuid", "StockItemPublicId", "TransactionDateTime", "StockIn", "ReceiptNumber", "StockOut", "InvoiceNumber", "PublicId"])
+		        "fnServerData": fnServerObjectToArray(["StockItemPublicId", "TransactionDateTime", "StockIn", "ReceiptNumber", "StockOut", "InvoiceNumber", "PublicId"])
 		    });
 
 		});

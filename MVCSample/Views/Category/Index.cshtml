@@ -17,9 +17,6 @@
                 <thead>
                     <tr>
                         <th>
-							@Html.LabelFor(m => m.ModelGuid, new { @class = "control-label" })
-						</th>
-                        <th>
 							@Html.LabelFor(m => m.Name, new { @class = "control-label" })
 						</th>
                         <th>
@@ -99,7 +96,7 @@
 
 			$("#table").dataTable({
 		        "sAjaxSource": "/api/Category",
-		        "fnServerData": fnServerObjectToArray(["ModelGuid", "Name", "Description", "Order", "ParentCategoryPublicId", "PublicId"])
+		        "fnServerData": fnServerObjectToArray(["Name", "Description", "Order", "ParentCategoryPublicId", "PublicId"])
 		    });
 
 		});

@@ -41,7 +41,6 @@ var StockItemData = StockItemData || (function(){
 				type: 'PUT',
 				dataType: 'json',
 				data: {
-					ModelGuid: that.ModelGuid,
 					StockKeepingUnit: that.StockKeepingUnit,
 					Name: that.Name,
 					Description: that.Description,
@@ -80,7 +79,6 @@ var StockItemData = StockItemData || (function(){
 				type: 'POST',
 				dataType: 'json',
 				data: {
-					ModelGuid: that.ModelGuid,
 					StockKeepingUnit: that.StockKeepingUnit,
 					Name: that.Name,
 					Description: that.Description,
@@ -137,7 +135,6 @@ var StockItemData = StockItemData || (function(){
 		LoadEntity: function(data, form){
 
 			var that = this;
-			that.ViewModel.ModelGuid = data.ModelGuid;
 			that.ViewModel.StockKeepingUnit = data.StockKeepingUnit;
 			that.ViewModel.Name = data.Name;
 			that.ViewModel.Description = data.Description;
@@ -228,7 +225,6 @@ var StockItemData = StockItemData || (function(){
 			WeightUnitsDataSource: null,
 			CategoriesDataSource: null,
 		
-			ModelGuid: '',
 			StockKeepingUnit: '',
 			Name: '',
 			Description: '',
@@ -286,7 +282,6 @@ var StockItemData = StockItemData || (function(){
 			that.ViewModel.DimensionUnitsDataSource = DimensionUnitsData.DimensionUnitsDataSource;
 			that.ViewModel.WeightUnitsDataSource = WeightUnitsData.WeightUnitsDataSource;
 			that.ViewModel.CategoriesDataSource = CategoriesData.CategoriesDataSource;
-			that.ViewModel.ModelGuid = '';
 			that.ViewModel.StockKeepingUnit = '';
 			that.ViewModel.Name = '';
 			that.ViewModel.Description = '';

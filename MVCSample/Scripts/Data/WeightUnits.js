@@ -17,7 +17,6 @@ var WeightUnitsData = WeightUnitsData || (function(){
 			schema: {
 
 				model: {
-					ModelGuid: 'ModelGuid',
 					Name: 'Name',
 					Description: 'Description',
 					Order: 'Order',

@@ -25,12 +25,12 @@ namespace MVCSample.Models
 
         public string GetCategoryRowKey(Category Category)
         {
-            return GetRowKey();
+            return GetCategoryRowKey(Category.ModelGuid);
         }
 
-        public string GetCategoryRowKey()
+        public string GetCategoryRowKey(Guid ModelGuid)
         {
-            return GetRowKey();
+            return GetRowKey(ModelGuid.ToString());
         }
 
 		#endregion

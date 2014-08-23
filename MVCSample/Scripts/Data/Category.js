@@ -41,7 +41,6 @@ var CategoryData = CategoryData || (function(){
 				type: 'PUT',
 				dataType: 'json',
 				data: {
-					ModelGuid: that.ModelGuid,
 					Name: that.Name,
 					Description: that.Description,
 					Order: that.Order,
@@ -72,7 +71,6 @@ var CategoryData = CategoryData || (function(){
 				type: 'POST',
 				dataType: 'json',
 				data: {
-					ModelGuid: that.ModelGuid,
 					Name: that.Name,
 					Description: that.Description,
 					Order: that.Order,
@@ -121,7 +119,6 @@ var CategoryData = CategoryData || (function(){
 		LoadEntity: function(data, form){
 
 			var that = this;
-			that.ViewModel.ModelGuid = data.ModelGuid;
 			that.ViewModel.Name = data.Name;
 			that.ViewModel.Description = data.Description;
 			that.ViewModel.Order = data.Order;
@@ -160,7 +157,6 @@ var CategoryData = CategoryData || (function(){
 			PublicId: '',
 			CategoriesDataSource: null,
 		
-			ModelGuid: '',
 			Name: '',
 			Description: '',
 			Order: '',
@@ -206,7 +202,6 @@ var CategoryData = CategoryData || (function(){
 			that.ViewModel.PublicId = publicId;
 
 			that.ViewModel.CategoriesDataSource = CategoriesData.CategoriesDataSource;
-			that.ViewModel.ModelGuid = '';
 			that.ViewModel.Name = '';
 			that.ViewModel.Description = '';
 			that.ViewModel.Order = '';
