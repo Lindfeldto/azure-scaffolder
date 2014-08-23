@@ -170,6 +170,7 @@ namespace AzureTableStorageScaffolder.Scaffolders
             "RowKey",
             "Timestamp",
             "ETag",
+            "ModelGuid",
             "Id",
             "PublicId",
             "CreatedDateTime",

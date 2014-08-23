@@ -72,12 +72,26 @@
 				</div>
 <#
 					}
-					else {
-#>				<div class="form-group" data-bind="visible: loaded">
+					else if (property.Value == typeof(System.DateTime).FullName)
+					{
+#>				
+				<div class="form-group">
 					<div class="row">
 						@Html.LabelFor(m => m.<#= property.Key #>, new { @class = "col-md-3 control-label" })
 						<div class="col-md-9">
 							@Html.TextBoxFor(m => m.<#= property.Key #>, new Dictionary<string, object>() { { "class", "form-control" }, { "data-bind", "value: <#= property.Key #>" }, { "data-role", "datetimepicker" } })
+							@Html.ValidationMessageFor(m => m.<#= property.Key #>, "", new { @class = "text-danger" })
+						</div>
+					</div>
+				</div>
+<#
+					}
+					else {
+#>				<div class="form-group">
+					<div class="row">
+						@Html.LabelFor(m => m.<#= property.Key #>, new { @class = "col-md-3 control-label" })
+						<div class="col-md-9">
+							@Html.TextBoxFor(m => m.<#= property.Key #>, new Dictionary<string, object>() { { "class", "form-control" }, { "data-bind", "value: <#= property.Key #>" } })
 							@Html.ValidationMessageFor(m => m.<#= property.Key #>, "", new { @class = "text-danger" })
 						</div>
 					</div>
